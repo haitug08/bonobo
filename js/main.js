@@ -193,3 +193,43 @@ function modalOut(e) {
   }
 }
 addEventListener('click', modalOut);
+
+const modal = document.querySelector('.js-modal');
+const open = document.querySelector('.js-modal-open');
+const close = document.querySelector('.js-modal-close');
+const agreeBtn = document.getElementById('agree-btn');
+const confirmBtn = document.getElementById('confirm-btn');
+const modalContent = document.querySelector('.modal-content');
+
+// モーダルを開く
+open.addEventListener('click', () => {
+  modal.classList.add('is-active');
+});
+
+// モーダルを閉じる
+close.addEventListener('click', () => {
+  modal.classList.remove('is-active');
+});
+
+// モーダル内スクロールイベント
+modalContent.addEventListener('scroll', () => {
+  const scrollBottom = modalContent.scrollTop + modalContent.clientHeight;
+  if (scrollBottom >= modalContent.scrollHeight) {
+    agreeBtn.disabled = false; // スクロールが最下部に到達したらボタンを有効化
+  }
+});
+
+// 同意ボタンクリック時の処理
+agreeBtn.addEventListener('click', () => {
+  modal.classList.remove('is-active');
+  confirmBtn.textContent = '確認済み';
+  confirmBtn.disabled = true;
+  confirmBtn.style.backgroundColor = 'gray';
+});
+
+// モーダル外クリックで閉じる
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('is-active');
+  }
+});
