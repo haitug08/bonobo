@@ -1431,7 +1431,42 @@ main {
 }
 
 /* モーダル内側の指定 */
-.mo
+.modal-container{
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 600px;
+  width: 90%;
+}
+
+/* モーダルを閉じるボタンの指定 */
+.modal-close{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -20px;
+  right: -20px;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  background: #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* モーダルのコンテンツ部分の指定 */
+.modal-content{
+  background: #fff;
+  text-align: left;
+  line-height: 1.8;
+  padding: 20px;
+}
+
+/* モーダルのコンテンツ部分のテキストの指定 */
+.modal-content p{
+  margin: 1em 0;
+}
 
 
 @media screen and (max-width:899px) {
