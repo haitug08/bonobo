@@ -27,24 +27,23 @@
 <button id="confirm-btn" class="modal-open js-modal-open">重要事項説明書を確認する</button>
 
 <div class="modal js-modal">
-<div class="modal-container">
-<div class="modal-close js-modal-close">×</div>
-<div class="modal-content">
+  <div class="modal-container">
+    <div class="modal-close js-modal-close">×</div>
+    <div class="modal-content">
 
-<section>
-<h2>重要事項説明書</h2>
-<p>
-ここに重要事項説明書の内容が記載されます。<br>
-スクロールして内容を最後まで確認してください。
-</p>
-<p style="height: 1000px; overflow: hidden;">
-  サンプルテキストです。この領域を下までスクロールしてください。
-</p>
-<button id="agree-btn" class="agree-btn" disabled>確認のうえ同意する</button>
-</section>
-     
-</div>
-</div>
+      <section>
+        <h2>重要事項説明書</h2>
+        <p>
+          ここに重要事項説明書の内容が記載されます。内容を確認してください。
+        </p>
+        <p style="height: 200px; overflow: hidden;">
+          サンプルテキストです。<br>適宜ここに説明を記載します。
+        </p>
+        <button id="agree-btn" class="agree-btn">確認のうえ同意する</button>
+      </section>
+         
+    </div>
+  </div>
 </div>
 
 </section>
@@ -66,19 +65,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="js/main.js"></script>
- <script>
-  const modalContent = document.querySelector('.modal-content');
-  const agreeBtn = document.getElementById('agree-btn');
-
-  modalContent.addEventListener('scroll', () => {
-    const scrollTop = modalContent.scrollTop;
-    const scrollHeight = modalContent.scrollHeight;
-    const clientHeight = modalContent.clientHeight;
-
-    if (scrollTop + clientHeight >= scrollHeight - 1) {
-      agreeBtn.disabled = false;
-    }
-  });
-</script>
+ 
 </body>
 </html>
