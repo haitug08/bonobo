@@ -1382,8 +1382,20 @@ main {
 }
 
 
-/* モーダルを開くボタン */
-.modal-open{
+.modal-content {
+  max-height: 80vh; /* 最大高さを設定 */
+  overflow-y: auto; /* 必ず垂直スクロールバーを表示 */
+  padding: 20px;
+  box-sizing: border-box; /* パディングを含む高さ計算 */
+  background: #fff;
+}
+
+.modal-container {
+  max-height: 90vh; /* ビューポート高さの90%に制限 */
+  overflow: hidden; /* 内部要素でスクロールを管理 */
+}
+
+.modal-open {
   font-size: 16px;
   font-weight: bold;
   width: 500px;
@@ -1395,15 +1407,14 @@ main {
   margin: 100px;	
 }
 
-/* モーダルと背景の指定 */
-.modal{
+.modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   text-align: center;
-  background: rgba(0,0,0,50%);
+  background: rgba(0, 0, 0, 0.5);
   padding: 40px 20px;
   overflow: auto;
   opacity: 0;
@@ -1412,60 +1423,24 @@ main {
   box-sizing: border-box;
 }
 
-/* モーダルの擬似要素の指定 */
-.modal:before{
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%;
-  margin-left: -0.2em;
-}
-
-/* クラスが追加された時の指定 */
-.modal.is-active{
+.modal.is-active {
   opacity: 1;
   visibility: visible;
 }
 
-/* モーダル内側の指定 */
-.modal-container{
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  max-width: 800px;
-  width: 90%;
-}
-
-/* モーダルを閉じるボタンの指定 */
-.modal-close{
+.modal-close {
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   top: -20px;
   right: -20px;
   width: 40px;
   height: 40px;
-  color: #fff;
   background: #000;
+  color: #fff;
   border-radius: 50%;
   cursor: pointer;
-}
-
-/* モーダルのコンテンツ部分の指定 */
-.modal-content{
-  background: #fff;
-  text-align: left;
-  line-height: 1.8;
-  padding: 20px;
-  max-height: 80vh; /* 最大高さを設定 */
-  overflow-y: auto; /* 垂直スクロールを有効化 */
-  box-sizing: border-box;
-}
-
-/* モーダルのコンテンツ部分のテキストの指定 */
-.modal-content p{
-  margin: 1em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
