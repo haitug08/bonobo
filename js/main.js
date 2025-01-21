@@ -171,33 +171,34 @@ function customCalculate() {
 
 
 
-const modal = document.querySelector('.js-modal');
-const open = document.querySelector('.js-modal-open');
-const close = document.querySelector('.js-modal-close');
-const agreeBtn = document.getElementById('agree-btn');
-const confirmBtn = document.getElementById('confirm-btn');
+document.querySelectorAll('.js-modal-open').forEach(openButton => {
+  const modalId = openButton.getAttribute('data-modal'); // 対応するモーダルID
+  const modal = document.getElementById(modalId);
+  const closeButton = modal.querySelector('.js-modal-close');
+  const agreeButton = modal.querySelector('.agree-btn');
 
-// モーダルを開く
-open.addEventListener('click', () => {
-  modal.classList.add('is-active');
-});
+  // モーダルを開く
+  openButton.addEventListener('click', () => {
+    modal.classList.add('is-active');
+  });
 
-// モーダルを閉じる
-close.addEventListener('click', () => {
-  modal.classList.remove('is-active');
-});
-
-// 同意ボタンクリック時の処理
-agreeBtn.addEventListener('click', () => {
-  modal.classList.remove('is-active');
-  confirmBtn.textContent = '確認済み';
-  confirmBtn.disabled = true;
-  confirmBtn.style.backgroundColor = 'gray';
-});
-
-// モーダル外クリックで閉じる
-window.addEventListener('click', (e) => {
-  if (e.target === modal) {
+  // モーダルを閉じる
+  closeButton.addEventListener('click', () => {
     modal.classList.remove('is-active');
-  }
+  });
+
+  // 同意ボタンクリック時の処理
+  agreeButton.addEventListener('click', () => {
+    modal.classList.remove('is-active');
+    openButton.textContent = '確認済み';
+    openButton.disabled = true;
+    openButton.style.backgroundColor = 'gray';
+  });
+
+  // モーダル外クリックで閉じる
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('is-active');
+    }
+  });
 });
