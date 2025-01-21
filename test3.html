@@ -37,55 +37,8 @@
 ここに重要事項説明書の内容が記載されます。<br>
 スクロールして内容を最後まで確認してください。
 </p>
-<p style="height: 800px; overflow: hidden;">
-これはサンプルテキストです。この領域を下までスクロールしてください。<br>
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaa<br>
-     aaaaaa<br>
-     aa<br>
-     a<br>
-   aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaa<br>
-     aaaaaa<br>
-     aa<br>
-     a<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaa<br>
-     aaaaaa<br>
-     aa<br>
-     a<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaa<br>
-     aaaaaa<br>
-     aa<br>
-     a<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaaaaaaaa<br>
-     aaaaaaaaaaaaaaa<br>
-     aaaaaa<br>
-     aa<br>
-     a<br>  
+<p style="height: 1000px; overflow: hidden;">
+  サンプルテキストです。この領域を下までスクロールしてください。
 </p>
 <button id="agree-btn" class="agree-btn" disabled>確認のうえ同意する</button>
 </section>
@@ -113,6 +66,19 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="js/main.js"></script>
- 
+ <script>
+  const modalContent = document.querySelector('.modal-content');
+  const agreeBtn = document.getElementById('agree-btn');
+
+  modalContent.addEventListener('scroll', () => {
+    const scrollTop = modalContent.scrollTop;
+    const scrollHeight = modalContent.scrollHeight;
+    const clientHeight = modalContent.clientHeight;
+
+    if (scrollTop + clientHeight >= scrollHeight - 1) {
+      agreeBtn.disabled = false;
+    }
+  });
+</script>
 </body>
 </html>
