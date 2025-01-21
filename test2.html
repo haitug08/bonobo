@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>代理店ページ｜Bonobo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+<meta name="description" content="">
+<link rel="stylesheet" href="css/style.css">
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet"> 
+</head>
+<body>
+
+<header>
+<h1 id="logo"><a href="index.html"><img src="images/logo_bonobo.png" alt=""></a></h1>
+<div id="menubar_hdr">
+<span></span><span></span><span></span>
+</div>
+</header>
+
+<main>
+<div class="zen-kaku-gothic-new-regular">
+
+<section>
+<div class="btn">
+ <button id="button" type="button">計算</button>
+</div>
+</section>
+
+<section>
+<div class="modal js-modal" id="modal1">
+  <div class="modal-container">
+    <div class="modal-close js-modal-close">×</div>
+    <div class="modal-content">
+      <h2>保険料見積</h2>
+
+      <form class="form">   
+        <table class="ta1" style="max-width: 800px;">
+          <caption>選択してください</caption>
+          <tr>
+            <th>区分</th>
+            <td>
+              <div class="select1">
+                <select id="class1" name="class" onchange="calculate()" style="width: 300px;">
+                  <option value=" ">---</option>
+                  <option value="2">法人A（100名以上300名未満）</option>
+                  <option value="3">法人B（10名以上100名未満）</option>
+                  <option value="4">法人C（10名未満）</option>
+                  <option value="1">個人事業主</option>
+                </select>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th>プラン</th>
+            <td>
+              <div class="select1">
+                <select id="plan1" name="plan" onchange="calculate()" style="width: 300px;">
+                  <option value=" ">---</option>
+                  <option value="1">ライト</option>
+                  <option value="2">スタンダード</option>
+                </select>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th>払込回数</th>
+            <td>
+              <div class="select1">
+                <select id="times1" name="times" onchange="calculate()" style="width: 300px;">
+                  <option value="1">月払</option>
+                  <option value="2">年払</option>
+                </select>
+              </div>
+            </td>
+          </tr>       
+        </table>
+
+        <table class="ta1" style="max-width: 800px;">
+          <caption>見積結果</caption>
+          <tr>
+            <th>保険料</th>
+            <td id="premium-result">---</td>
+          </tr>
+        </table>
+
+        <table class="ta1" style="max-width: 800px;">
+          <caption>補償内容</caption>
+          <tr>
+            <th rowspan="2">保険金額</th>
+            <th>法律相談料保険金</th>
+            <td id="legal-consultation-result">---</td>
+          </tr>
+          <tr>
+            <th>弁護士費用保険金</th>
+            <td id="attorney-fee-result">---</td>
+          </tr>
+          <tr>
+            <th>特約</th>
+            <td id="special-clause-result" colspan="2">---</td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+</div>
+</section>
+</div>
+</main>
+
+<footer style="height:300px; background-image: linear-gradient(180deg, rgba(211, 223, 223, 1), rgba(0, 135, 167, 1)); font-size: 100%;">
+  <div class="zen-kaku-gothic-new-regular">
+    <img src="images/logo_bonobo.png" alt="" style="width: 250px; margin-top: 40px;">
+    <p class="tenor-sans-regular">Trouble-free World</p>
+    <p>まずは、お気軽にご相談ください</p>
+    <div class="btn2">
+      <button type="button">お問い合わせ</button>
+      <button type="button">資料請求</button>
+    </div>
+    <p>会社概要　　個人情報保護方針　　お知らせ　　よくあるご質問</p>
+  </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/premium.js"></script>
+ 
+</body>
+</html>
