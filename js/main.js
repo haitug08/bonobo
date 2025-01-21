@@ -168,37 +168,3 @@ function customCalculate() {
   // ページ読み込み後に月末日を設定
   window.onload = setEndOfMonth;
 
-
-
-
-document.querySelectorAll('.js-modal-open').forEach(openButton => {
-  const modalId = openButton.getAttribute('data-modal'); // 対応するモーダルID
-  const modal = document.getElementById(modalId);
-  const closeButton = modal.querySelector('.js-modal-close');
-  const agreeButton = modal.querySelector('.agree-btn');
-
-  // モーダルを開く
-  openButton.addEventListener('click', () => {
-    modal.classList.add('is-active');
-  });
-
-  // モーダルを閉じる
-  closeButton.addEventListener('click', () => {
-    modal.classList.remove('is-active');
-  });
-
-  // 同意ボタンクリック時の処理
-  agreeButton.addEventListener('click', () => {
-    modal.classList.remove('is-active');
-    openButton.textContent = '確認済み';
-    openButton.disabled = true;
-    openButton.style.backgroundColor = 'gray';
-  });
-
-  // モーダル外クリックで閉じる
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.remove('is-active');
-    }
-  });
-});
