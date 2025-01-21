@@ -23,30 +23,48 @@
 <div class="zen-kaku-gothic-new-regular">
 
 <section>
-
-<button id="confirm-btn" class="modal-open js-modal-open">重要事項説明書を確認する</button>
-
-<div class="modal js-modal">
-  <div class="modal-container">
-    <div class="modal-close js-modal-close">×</div>
-    <div class="modal-content">
-
-      <section>
-        <h2>重要事項説明書</h2>
-        <p>
-          ここに重要事項説明書の内容が記載されます。内容を確認してください。
-        </p>
-        <p style="height: 200px; overflow: hidden;">
-          サンプルテキストです。<br>適宜ここに説明を記載します。
-        </p>
-        <button id="agree-btn" class="agree-btn">確認のうえ同意する</button>
-      </section>
-         
+  <!-- 重要事項説明書ボタンとモーダル -->
+  <button id="confirm-btn-1" class="modal-open js-modal-open" data-modal="modal-1">重要事項説明書を確認する</button>
+  <div id="modal-1" class="modal js-modal">
+    <div class="modal-container">
+      <div class="modal-close js-modal-close">×</div>
+      <div class="modal-content">
+        <section>
+          <h2>重要事項説明書</h2>
+          <p>
+            ここに重要事項説明書の内容が記載されます。内容を確認してください。
+          </p>
+          <p style="height: 200px; overflow: hidden;">
+            サンプルテキストです。<br>適宜ここに説明を記載します。
+          </p>
+          <button id="agree-btn-1" class="agree-btn">確認のうえ同意する</button>
+        </section>
+      </div>
     </div>
   </div>
-</div>
 
+  <!-- 告知事項ボタンとモーダル -->
+  <button id="confirm-btn-2" class="modal-open js-modal-open" data-modal="modal-2">告知事項を確認する</button>
+  <div id="modal-2" class="modal js-modal">
+    <div class="modal-container">
+      <div class="modal-close js-modal-close">×</div>
+      <div class="modal-content">
+        <section>
+          <h2>告知事項</h2>
+          <p>
+            ここに告知事項の内容が記載されます。内容を確認してください。
+          </p>
+          <p style="height: 200px; overflow: hidden;">
+            告知事項のサンプルテキストです。<br>こちらも適宜記載します。
+          </p>
+          <button id="agree-btn-2" class="agree-btn">確認のうえ同意する</button>
+        </section>
+      </div>
+    </div>
+  </div>
 </section>
+  
+
 </div>
 </main>
 
