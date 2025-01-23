@@ -1465,7 +1465,7 @@ main {
 }
 
 .modal-button {
-    display: inline-block;
+    display: block;
     text-decoration: none;
     border: none;
     border-radius: 3px;
@@ -1476,6 +1476,7 @@ main {
     letter-spacing: 0.1em;
     color: #fff;
     transition: 0.3s;
+    margin-bottom: 20px;
 }
 
 
