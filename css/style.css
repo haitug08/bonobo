@@ -1464,6 +1464,20 @@ main {
   margin: 1em 0;
 }
 
+.modal button {
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 100px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    background: #0090B0;
+    letter-spacing: 0.1em;
+    color: #fff;
+    transition: 0.3s;
+}
+
 
 
 @media screen and (max-width:899px) {
