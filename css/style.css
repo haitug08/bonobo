@@ -295,11 +295,13 @@ main p {
 footer small {font-size: 100%;}
 
 footer {
-	font-size: 0.6rem;		/*文字サイズ。remの単位についてはテンプレート内の解説をお読み下さい。*/
-	background: #0090B0;		/*背景色*/
-	color: #fff;			/*文字色*/
-	text-align: center;		/*内容をセンタリング*/
-	padding: 10px;			/*ボックス内の余白*/
+	height:300px; 
+	background-image: linear-gradient(180deg, rgba(211, 223, 223, 1), rgba(0, 135, 167, 1)); 
+	font-size: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
 }
 
 /*リンクテキスト*/
