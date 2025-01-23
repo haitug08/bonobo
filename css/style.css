@@ -1464,7 +1464,7 @@ main {
   margin: 1em 0;
 }
 
-.modal button {
+.modal-button {
     display: inline-block;
     text-decoration: none;
     border: none;
