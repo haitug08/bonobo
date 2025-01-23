@@ -1382,19 +1382,6 @@ main {
 }
 
 
-/* モーダルを開くボタン */
-.modal-open{
-  font-size: 16px;
-  font-weight: bold;
-  width: 500px;
-  height: 60px;
-  color: #fff;
-  background: #0090B0;
-  border: none;
-  cursor: pointer;
-  margin: 20px;	
-}
-
 /* モーダルと背景の指定 */
 .modal{
   position: fixed;
