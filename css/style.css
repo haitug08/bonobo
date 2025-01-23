@@ -302,6 +302,7 @@ footer {
 	left: 0;
 	bottom: 0;
 	width: 100%;
+	text-align: center;
 }
 
 /*リンクテキスト*/
@@ -1369,6 +1370,12 @@ main {
         font-weight: bold;
         margin: 5px;
         width: 270px;
+}
+
+.wrapper{
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 100px;
 }
 
 .tenor-sans-regular {
