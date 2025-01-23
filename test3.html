@@ -24,12 +24,22 @@
 
 <section>
 <h2>申込フォーム内での各項目の確認方法</h2>
-  <p>ボタンクリックでモーダル表示し、その中で確認ボタンをクリックさせる<br>
-  モーダル内の文章はまだこれから</p>
+  <p>ボタンクリックでモーダル表示し、その中で確認ボタンをクリックさせたい<br>
+  クリック後、「確認済み」にボタンが変更</p>
+</section>
+
+<section>
+  <input type="radio" name="caution" value="caution01">
+  <label for="caution01">重要事項説明書(PDF)を読み、その内容を確認、同意する</label>
+  <input type="radio" name="caution" value="caution02">
+  <label for="caution02">告知事項(PDF)を読み、その内容を確認、同意する</label>
+  <input type="radio" name="caution" value="caution03">
+  <label for="caution03">意向確認(PDF)を読み、その内容を確認、同意する</label>
+  <input type="radio" name="caution" value="caution04">
+  <label for="caution04">反社会的勢⼒排除に関する誓約書(PDF)を読み、その内容を確認、同意する</label>
 </section>
   
 <section style="width:500px;">
-
   <button id="confirm-btn-1" class="modal-open js-modal-open" data-modal="modal-1">重要事項説明書を確認する</button>
   <div id="modal-1" class="modal js-modal">
     <div class="modal-container">
