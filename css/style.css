@@ -1455,8 +1455,6 @@ main {
   text-align: left;
   line-height: 1.8;
   padding: 20px;
-  max-height: 80vh; /* 最大高さを設定 */
-  overflow-y: auto; /* 垂直スクロールを有効化 */
   box-sizing: border-box;
 }
 
