@@ -1476,8 +1476,10 @@ main {
     letter-spacing: 0.1em;
     color: #fff;
     transition: 0.3s;
+    margin-top: 20px;
     margin-bottom: 20px;
     min-width: 400px;
+    cursor: pointer;
 }
 
 
