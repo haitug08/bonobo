@@ -179,8 +179,8 @@ document.querySelectorAll('.js-modal-open').forEach(openButton => {
   agreeButton.addEventListener('click', () => {
     modal.classList.remove('is-active');
     openButton.textContent = '確認済み';
-    openButton.disabled = true;
     openButton.style.backgroundColor = 'gray';
+    openButton.style.cursor = 'pointer'; // 再クリック可能にする
   });
 
   // モーダル外クリックで閉じる
