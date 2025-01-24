@@ -43,8 +43,9 @@
   <input type="radio" name="caution" value="caution04">
   <label for="caution04">代理店経由のお申し込み</label>
   <br>
-  <label for="ag_number02">代理店番号</label>
-  <input type="text" name="ag_number" value="ag_number02">
+  <label for="ag_number">代理店番号</label>
+  <input type="text" id="ag_number" name="ag_number" oninput="displayAgentName()">
+  <p id="agent_name" style="margin-top: 10px;"></p>
 </section>
   
 </div>
@@ -67,7 +68,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="js/main.js"></script>
 <script>
-
 document.querySelectorAll('.js-modal-open').forEach(openButton => {
   const modalId = openButton.getAttribute('data-modal'); // 対応するモーダルID
   const modal = document.getElementById(modalId);
@@ -99,8 +99,30 @@ document.querySelectorAll('.js-modal-open').forEach(openButton => {
     }
   });
 });
-  
 </script> 
+
+<script>
+  // 代理店番号と代理店名のマッピング
+  const agentData = {
+    1001: "株式会社AAA",
+    1002: "株式会社BBB",
+    1003: "株式会社CCC",
+    // 必要に応じて追加
+  };
+
+  // 入力値に応じて代理店名を表示する関数
+  function displayAgentName() {
+    const agNumberInput = document.getElementById("ag_number").value;
+    const agentNameElement = document.getElementById("agent_name");
+    // 代理店番号が一致する場合、名前を表示
+    if (agentData[agNumberInput]) {
+      agentNameElement.textContent = `代理店名: ${agentData[agNumberInput]}`;
+    } else {
+      agentNameElement.textContent = "該当する代理店がありません";
+    }
+  }
+</script>
+  
 </body>
 </html>
 
