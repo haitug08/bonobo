@@ -29,68 +29,46 @@
 <div class="zen-kaku-gothic-new-regular">
 
 
-<section>
-
-<form action="" method="post" id="contact_form">
-
-<h2>パートナー募集ページの問い合わせフォーム項目</h2>
-<p>ii様にてページ作成、プログレス様にて問い合わせのレコード保存用の箱作成</p>
+<section style="max-width:800px;">
 <table class="ta1">
-<tr>
-<th>会社名（または屋号）<span style="color:red;">※</span></th>
-<td style="text-align: left;"><input type="text" name="会社名（または屋号）" size="30" class="ws" required="required" autocomplete="off"></td>
-</tr>
-<tr>
-<th>所在地<span style="color:red;">※</span></th>
-<td style="text-align: left;"><input type="text" name="本社所在地" size="30" class="ws" required="required" autocomplete="off"></td>
-</tr>
-<tr>
-<th>URL</th>
-<td style="text-align: left;"><input type="text" name="URL" size="30" class="ws" autocomplete="off"></td>
-</tr>
-<tr>
-<th>担当者名<span style="color:red;">※</span></th>
-<td style="text-align: left;"><input type="text" name="担当者名" size="30" class="ws" required="required" autocomplete="off"></td>
-</tr>
-<tr>
-<th>電話番号<span style="color:red;">※</span></th>
-<td style="text-align: left;"><input type="tel" name="電話番号" size="30" class="ws" required="required" autocomplete="off"></td>
-</tr>
-<tr>
-<th>メールアドレス<span style="color:red;">※</span></th>
-<td style="text-align: left;"><input type="email" name="メールアドレス" size="30" class="ws" required="required" autocomplete="off"></td>
-</tr>
-<tr>
-<th>お問い合わせ内容<span style="color:red;">※</span></th>
-<td style="text-align: left;">
-<textarea name="お問い合わせ詳細" cols="30" rows="10" class="wl" required="required" autocomplete="off" style="height: 80px;"></textarea></td>
-</tr>
-<tr>
-<th>個人情報の取扱い<span style="color:red;">※</span></th>
-<td style="text-align: left;">
-<label class="ECM_CheckboxInput">
-  <input class="ECM_CheckboxInput-Input" type="checkbox" required="required">
-  <span class="ECM_CheckboxInput-DummyInput"></span>
-  <span class="ECM_CheckboxInput-LabelText">
-    <a href="policy/privacy.html" target="_blank">プライバシーポリシー</a>を確認のうえ、同意する</span>
-</label>
-</td>
+<caption>Ⅰ【申込登録】</caption>
+  <tr>
+  <td>
+    <ul>
+      <li>サービスページと申込フォーム実装</li>
+      <li>収納代行と連携</li>
+      <li>キントーンと連記</li>
+      <li>バウンスメール(申込受付、成立or謝絶)</li>
+    </ul>
+  </td>
 </tr>
 </table>
 
-<div style="display: inline-flex;">
-  <div class="btn" style="margin-left: 10px;">
-  <input type="submit" value="送信する" class="btns submit g-recaptcha"
-    data-sitekey="6Le2JZcpAAAAAPGX6KAuDaMRjxxrDnt1TuIjGWh7"
-    data-callback="onSubmit" data-action="submit">
-  </div>
-  <div class="btn" style="margin-left: 10px;">
-  <input type="reset" value="リセット" class="btns reset" style="background: gray;">
-  </div>
-</div>
+Ⅱ【基幹システム】
+・申込API実装
+・申込フォームと連携
+・収納代行と連携
+・ステータス状況反映(契約状況管理)
+・お問合せフォーム内容反映(電話)
+・対応履歴
+・バウンスメール(2回目振替不能等)
 
-</form>
+Ⅲ【マイページ】
+・契約内容照会
+・付帯サービス機能　
+リーガルチェック　契約書アップロード
+ひな形　ダウンロード
+弁護士紹介
+電話番号UP
+・事故受付ページ（最悪電話)
+・異動ページ(最悪電話)
 
+Ⅳ【代理店ページ】
+・契約者内容照会
+・代理店、募集人登録情報
+・手数料明細（最悪手動）
+
+  
 </section>
 
 </div>
