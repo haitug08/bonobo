@@ -129,12 +129,11 @@ function customCalculate() {
     openElements.forEach(element => element.style.display = "none");
 
     // 該当する要素を表示
-    const targetElement = document.querySelector(.open${selectedOption.slice(-2)});
+    const targetElement = document.querySelector(`.open${selectedOption.slice(-2)}`);
     if (targetElement) {
         targetElement.style.display = "block";
     }
 }
-
 
   // 解約手続き内の月末日を取得して表示する関数
   function setEndOfMonth() {
