@@ -121,39 +121,18 @@ $(function(){
         });
 
 
-//変更手続き内の表示・非表示切り替え
+//表示・非表示切り替え
 function customCalculate() {
-    var selectedOption = document.querySelector('input[name="course"]:checked').value;
-    if (selectedOption === "change01") {
-        document.querySelector(".open1").style.display = "block";
-        document.querySelector(".open2").style.display = "none";
-        document.querySelector(".open3").style.display = "none";
-        document.querySelector(".open4").style.display = "none";
-        document.querySelector(".open5").style.display = "none";
-    } else if (selectedOption === "change02") {
-        document.querySelector(".open1").style.display = "none";
-        document.querySelector(".open2").style.display = "block";
-        document.querySelector(".open3").style.display = "none";
-        document.querySelector(".open4").style.display = "none";
-        document.querySelector(".open5").style.display = "none";	    
-    } else if (selectedOption === "change03") {
-        document.querySelector(".open1").style.display = "none";
-        document.querySelector(".open2").style.display = "none";
-        document.querySelector(".open3").style.display = "block";
-        document.querySelector(".open4").style.display = "none";
-        document.querySelector(".open5").style.display = "none";
-    } else if (selectedOption === "change04") {
-        document.querySelector(".open1").style.display = "none";
-        document.querySelector(".open2").style.display = "none";
-        document.querySelector(".open3").style.display = "none";
-        document.querySelector(".open4").style.display = "block";
-        document.querySelector(".open5").style.display = "none";	    
-    } else if (selectedOption === "change05") {
-        document.querySelector(".open1").style.display = "none";
-        document.querySelector(".open2").style.display = "none";
-        document.querySelector(".open3").style.display = "none";
-        document.querySelector(".open4").style.display = "none";
-        document.querySelector(".open5").style.display = "block";
+    const selectedOption = document.querySelector('input[name="course"]:checked').value;
+    const openElements = document.querySelectorAll(".open01, .open02, .open03, .open04, .open05, .open06, .open07, .open08, .open09, .open10, .open11");
+
+    // すべての要素を非表示にする
+    openElements.forEach(element => element.style.display = "none");
+
+    // 該当する要素を表示
+    const targetElement = document.querySelector(`.open${selectedOption.slice(-2)}`);
+    if (targetElement) {
+        targetElement.style.display = "block";
     }
 }
 
