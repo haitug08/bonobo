@@ -126,15 +126,24 @@ function customCalculate() {
     const selectedOption = document.querySelector('input[name="course"]:checked').value;
     const openElements = document.querySelectorAll(".open01, .open02, .open03, .open04, .open05, .open06, .open07, .open08, .open09, .open10, .open11");
 
-    // すべての要素を非表示にする
-    openElements.forEach(element => element.style.display = "none");
+    // すべての要素をフェードアウト（非表示）
+    openElements.forEach(element => {
+        element.classList.remove("show");
+        setTimeout(() => {
+            element.style.display = "none"; // 完全に消す
+        }, 400); // アニメーション時間に合わせる
+    });
 
-    // 該当する要素を表示
+    // 該当する要素をフェードイン（表示）
     const targetElement = document.querySelector(`.open${selectedOption.slice(-2)}`);
     if (targetElement) {
         targetElement.style.display = "block";
+        setTimeout(() => {
+            targetElement.classList.add("show");
+        }, 10); // 少し遅らせてCSSのトランジションを適用
     }
 }
+
 
   // 解約手続き内の月末日を取得して表示する関数
   function setEndOfMonth() {
