@@ -83,6 +83,7 @@ header {
 	padding: 5px 20px;		/*上下、左右へのヘッダー内の余白*/
 	background: #0090B0;		/*背景色*/
 	color: #fff;			/*文字色*/
+	height: 50px;
 }
 
 /*ヘッダーのリンクテキストの文字色*/
