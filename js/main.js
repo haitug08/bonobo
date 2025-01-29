@@ -133,7 +133,7 @@ function customCalculate() {
             element.style.display = "none"; // 完全に消す
         }, 400); // アニメーション時間に合わせる
     });
-
+	
     // 該当する要素をフェードイン（表示）
     const targetElement = document.querySelector(`.open${selectedOption.slice(-2)}`);
     if (targetElement) {
