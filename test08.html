@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>bonobo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet"> 
+</head>
+<body>
+<div class="wrapper">
+<header>
+<h1 id="logo"><a href="index.html"><img src="images/logo_bonobo.png" alt=""></a></h1>
+<div id="menubar_hdr">
+<span></span><span></span><span></span>
+</div>
+</header>
+</header>
+<div id="menubar">
+<div id="navigation"></div>
+</div>
+<main>
+<div class="zen-kaku-gothic-new-regular">
+
+<h2>申込フォーム内での各項目の確認方法</h2>
+  <p>確認ボタンクリックでモーダル表示し、その中で同意（または誓約）ボタンをクリックさせたい。クリック後、「確認済み」にボタンが自動的に変更する。</p>
+
+<section>
+  <h4>変更前</h4>
+  <input type="checkbox" name="caution" value="caution01">
+  <label for="caution01"><a href="pdf/sample.pdf" target="_blank">重要事項説明書(PDF)</a>を読み、その内容を確認、同意する</label><br>
+  <input type="checkbox" name="caution" value="caution02">
+  <label for="caution02"><a href="pdf/sample.pdf" target="_blank">告知事項(PDF)</a>を読み、その内容を確認、同意する</label><br>
+  <input type="checkbox" name="caution" value="caution03">
+  <label for="caution03"><a href="pdf/sample.pdf" target="_blank">意向確認(PDF)</a>を読み、その内容を確認、同意する</label><br>
+  <input type="checkbox" name="caution" value="caution04">
+  <label for="caution04"><a href="pdf/sample.pdf" target="_blank">反社会的勢⼒排除に関する誓約書(PDF)</a>を読み、その内容を確認、同意する</label><br>
+</section>
+  
+<section>
+  <h4>変更後</h4>
+  <button id="confirm-btn-1" class="modal-open js-modal-open modal-button" data-modal="modal-1">重要事項説明書を確認する</button>
+  <div id="modal-1" class="modal js-modal">
+    <div class="modal-container">
+      <div class="modal-close js-modal-close">×</div>
+      <div class="modal-content">
+        <section style="margin: 30px;">
+          <h2>重要事項説明書</h2>
+          <p style="overflow: hidden;">
+            お申込み時には、重要事項説明書の確認と同意が必須となります。<br>
+            「重要事項説明書を開く」をクリックし、重要事項説明書をご確認ください。<br>
+            また、重要事項説明書のPDFファイルはパソコンやスマートフォンへの保存等の方法で、ご契約期間中大切に保管いただきますようお願いいたします。<br><br>
+            確認できましたら、「同意する」をクリックしてください。<br>
+          </P>
+          <a href="pdf/sample.pdf" target="_blank" class="modal-button" style="text-align: center;">重要事項説明書を開く</a>
+          <button id="agree-btn-1" class="agree-btn modal-button">同意する</button>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <button id="confirm-btn-2" class="modal-open js-modal-open modal-button" data-modal="modal-2">告知事項を確認する</button>
+  <div id="modal-2" class="modal js-modal">
+    <div class="modal-container">
+      <div class="modal-close js-modal-close">×</div>
+      <div class="modal-content">
+        <section style="margin: 30px;">
+          <h2>告知事項</h2>
+          <p style="overflow: hidden;"></p>
+            <ol>
+              <li>基本的な企業に関する情報及び個人情報については、入力した内容に相違ありません。</li>
+              <li>既に生じている法律トラブルの概要（事件の相手方の名称・氏名も含む）は、入力した内容に相違ありません。</li>
+              <li>保険契約者および被保険者は、反社会的勢力との繋がりは一切ありません。</li>
+              <li>被保険者が営む事業・業種は、以下のいずれにも該当しておりません。
+                <ul>
+                  <li>性風俗特殊営業店</li>
+                  <li>小規模金融業</li>
+                  <li>クラブ・キャバクラ（ホスト、ホステスを擁するところ）</li>
+                  <li>ゲームセンター、パチンコ店・パチスロ店、麻雀店</li>
+                </ul>
+              </li>
+            </ol>
+            <p>上記の告知事項をご確認いただき、「同意する」をクリックしてください。<br>
+              なお、事実と相違がある場合、契約のお引き受けや保険金のお支払いができない場合がございます。あらかじめご了承ください。</p><br>
+          <button id="agree-btn-2" class="agree-btn modal-button">同意する</button>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <button id="confirm-btn-3" class="modal-open js-modal-open modal-button" data-modal="modal-3">意向確認を確認する</button>
+  <div id="modal-3" class="modal js-modal">
+    <div class="modal-container">
+      <div class="modal-close js-modal-close">×</div>
+      <div class="modal-content">
+        <section style="margin: 30px;">
+          <h2>意向確認</h2>
+          <p style="overflow: hidden;"></p>
+          <ol>
+            <li>補償内容（保険金等の支払事由）および保険金額は、ご意向に沿っていますか。</li>
+            <li>保険期間（1年間・自動更新）、保険料、保険料払込方法はご意向に沿っていますか。</li>
+            <li>責任開始日の決定方法は、ご理解いただけましたか。</li>
+            <li>責任開始日より以前に発生した法的トラブルについては、保険金支いの対象外となることについてご理解いただけましたか。</li>
+            <li>責任開始日から一定期間の間（待機期間、不担保期間）に発生した法的トラブルについては、保険金が支払われないことがあることをご理解いただけましたか。</li>
+            <li>被保険者が直面した法的トラブルが補償の対象となることについてご理解いただけましたか。</li>
+            <li>法務費用を補償する他の保険契約に加入されている場合、重複した部分について保険金が支払われないことをご理解いただけましたか。</li>
+            <li>保険料の払込猶予期間中に必要な保険料が払い込まれなかった場合、保険契約は失効となることをご理解いただけましたか。</li>
+            <li>更新後の保険料は保険金の支払い状況に応じて変動することを理解いただけましたか。</li>
+           </ol>
+          <p>以上の内容を十分ご確認のうえ、お客さまのご意向（ニーズ）と相違ないことをご確認いただけました場合、「同意する」をクリックしてください。</p><br>
+          <button id="agree-btn-2" class="agree-btn modal-button">同意する</button>
+        </section>
+      </div>
+    </div>
+  </div>
+ 
+  <button id="confirm-btn-4" class="modal-open js-modal-open modal-button" data-modal="modal-4">反社会的勢⼒排除に関する誓約書を確認する</button>
+  <div id="modal-4" class="modal js-modal">
+    <div class="modal-container">
+      <div class="modal-close js-modal-close">×</div>
+      <div class="modal-content">
+        <section style="margin: 30px;">
+          <h2>反社会的勢⼒排除に関する誓約</h2>
+          <p style="overflow: hidden;"></p>          
+          <ol>
+            <li>暴力団・暴力団関係企業もしくはこれらに準ずる者又はその構成員(以下総称して「反社会的勢力」という)ではないこと。</li>
+            <li>反社会的勢力等によって、その経営を支配される関係を有しないこと。</li>
+            <li>反社会的勢力等が、その経営に実質的に関与している関係を有しないこと。</li>
+            <li>反社会的勢力等に対して資金等を提供し,又は便宜を供与するなどの関係を有しないこと。</li>
+            <li>法的責任を超えた不当な要求行為をしないこと。</li>
+            <li>脅迫的な言辞または暴力行為をしないこと。</li>
+            <li>風説の流布、偽計又は威力を用いて貴社の信用を毀損し、業務を妨害する行為をしないこと。</li>
+           </ol>
+          <p>以上の内容を十分ご確認のうえ、「誓約する」をクリックしてください。</p><br>
+          <button id="agree-btn-2" class="agree-btn modal-button">誓約する</button>
+        </section>
+      </div>
+    </div>
+  </div> 
+</section>
+  
+</div>
+</main>
+
+<footer>
+  <div class="zen-kaku-gothic-new-regular">
+    <img src="images/logo_bonobo.png" alt="" style="width: 250px; margin-top: 40px;">
+    <p class="tenor-sans-regular">Trouble-free World</p>
+    <p>まずは、お気軽にご相談ください</p>
+    <div class="btn2">
+      <button type="button">お問い合わせ</button>
+      <button type="button">資料請求</button>
+    </div>
+    <p>会社概要　　個人情報保護方針　　お知らせ　　よくあるご質問</p>
+  </div>
+</footer>
+</div>
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+
+document.querySelectorAll('.js-modal-open').forEach(openButton => {
+  const modalId = openButton.getAttribute('data-modal'); // 対応するモーダルID
+  const modal = document.getElementById(modalId);
+  const closeButton = modal.querySelector('.js-modal-close');
+  const agreeButton = modal.querySelector('.agree-btn');
+
+  // モーダルを開く
+  openButton.addEventListener('click', () => {
+    modal.classList.add('is-active');
+  });
+
+  // モーダルを閉じる
+  closeButton.addEventListener('click', () => {
+    modal.classList.remove('is-active');
+  });
+
+  // 同意ボタンクリック時の処理
+  agreeButton.addEventListener('click', () => {
+    modal.classList.remove('is-active');
+    openButton.textContent = '確認済み';
+    openButton.style.backgroundColor = 'gray';
+    openButton.style.cursor = 'pointer'; // 再クリック可能にする
+  });
+
+  // モーダル外クリックで閉じる
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('is-active');
+    }
+  });
+});
+  
+</script> 
+</body>
+</html>
