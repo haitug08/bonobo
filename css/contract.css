@@ -1,0 +1,35 @@
+.contract h1,h2,h3{
+  font-size: 1rem;
+  font-weight: normal;
+  padding:0;
+}
+
+.contract h1 {
+  counter-reset: section2;
+  margin: 2rem 0 1rem 0;
+}
+.contract h2 {
+  counter-reset: section3;
+    margin: 0 0 1rem 0.5rem;
+    padding-left: 0.5em;
+    text-indent: -1.0em;
+}
+.contract h3 {
+  counter-reset: section4;
+    margin: 0 0 1rem 1rem;
+    padding-left: 1.5em;
+    text-indent: -1.5em;
+}
+
+.contract h1::before {
+  content: "第" counter(section1) "条 ";
+  counter-increment: section1;
+}
+.contract h2::before {
+  content: counter(section2) ". ";
+  counter-increment: section2;
+}
+.contract h3::before {
+  content: "(" counter(section3) ") ";
+  counter-increment: section3;
+}
