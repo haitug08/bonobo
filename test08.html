@@ -44,6 +44,45 @@
   <input type="radio" name="settlement" value="settlement03">
   <label for="settlement03" style="font-weight: bold;font-size: large;">口座振替でお支払い</label>
 </section>
+
+<section>
+        <input type="radio" id="change01" name="course" onchange="customCalculate()" value="change01">
+        <label for="change01" style="font-weight: bold;font-size: large;">クレジットカードでお支払い</label>
+        <input type="radio" id="change02" name="course" onchange="customCalculate()" value="change02">
+        <label for="change02" style="font-weight: bold;font-size: large;">口座振替でお支払い</label>
+
+  <div class="open01">
+    <table class="ta1">
+      <tbody>
+        <caption>クレジットカード</caption>
+        <tr>
+          <th>保険料の払込方法</th>
+          <td>口座振替払</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="btn">
+      <a href="">変更申請</a>
+    </div>
+  </div>  
+
+  <div class="open02">
+    <table class="ta1">
+      <tbody>
+        <caption>口座振替</caption>
+        <tr>
+          <th>保険料の払込方法</th>
+          <td>口座振替払</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="btn">
+      <a href="">変更申請</a>
+    </div>
+  </div>  
+
+  
+</section>  
   
   
 </div>
