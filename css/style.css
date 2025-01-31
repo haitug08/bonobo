@@ -1493,6 +1493,7 @@ main {
     border-radius: 10px;
     width: 500px;
     text-align: center;
+    display: none;	
 }
 .box1 p {
     margin: 0; 
