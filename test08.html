@@ -27,17 +27,20 @@
 
   
 <h2>申込フォームでの決済選択について</h2>
+<p>見せ方の案（参考：<a href="pdf/kessai_select.pdf">ii-inc社のイメージ</a>）</p>
+  
 <h4 style="border-bottom: 1px solid; font-weight: bold; font-size: large; width:800px;">決済方法選択</h4>
 
 <section>  
   <input type="radio" id="change01" name="course" onchange="customCalculate()" value="change01">
   <label for="change01" style="font-weight: bold;font-size: large;">クレジットカードでお支払い</label>
-  <img src="images/card.jpg" style="width: 250px;">
+  
   <br>
     <div class="open01">
       <div class="box1">
         <p>入力して下さい</p>
       </div>
+    <img src="images/card.jpg" style="width: 250px;">  
     <table class="ta1" style="width:800px; border:none;">
       <tbody>
         <tr style="border:none;">
@@ -104,20 +107,14 @@
 
   <section>  
    <input type="radio" id="change02" name="course" onchange="customCalculate()" value="change02">
-   <label for="change02" style="font-weight: bold;font-size: large;">口座振替でお支払い（webでの登録）</label>
+   <label for="change02" style="font-weight: bold;font-size: large;">口座振替でお支払い</label>
     <br>
   <div class="open02">
+    <p>webでの口座登録</p>
       <div class="btn">
         <a href="#" id="" style="background-color: #D5743c; padding: 5px 50px; margin: 20px;">外部サイトへ</a>
       </div>
-  </div>    
-</section>  
-
-<section>  
-        <input type="radio" id="change03" name="course" onchange="customCalculate()" value="change03">
-        <label for="change03" style="font-weight: bold;font-size: large;">口座振替でお支払い（紙用紙での登録）</label>
-  <br>
-  <div class="open03">
+    <p>紙用紙での口座登録</p>    
       <div class="btn">
         <a href="pdf/sample.pdf" target="_blank" id="" style="background-color: #D5743c; padding: 5px 50px; margin: 20px;">口座振替依頼書をダウンロード（PDF）</a>
       </div>
