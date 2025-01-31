@@ -1487,9 +1487,9 @@ main {
     padding: 0.5em 1em;
     margin: 2em 0;
     font-weight: bold;
-    color: #6091d3;/*文字色*/
+    color: red;/*文字色*/
     background: #FFF;
-    border: solid 3px #6091d3;/*線*/
+    border: solid 3px red;/*線*/
     border-radius: 10px;/*角の丸み*/
 }
 .box1 p {
