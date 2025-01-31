@@ -1501,25 +1501,18 @@ main {
 }
 
 .loader {
-  width: 120px;
-  height: 22px;
-  border-radius: 20px;
-  color: #514b82;
-  border: 2px solid;
-  position: relative;
+  width: fit-content;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 30px;
+  padding-bottom: 8px;
+  background: linear-gradient(currentColor 0 0) 0 100%/0% 3px no-repeat;
+  animation: l2 2s linear infinite;
 }
-.loader::before {
-  content: "";
-  position: absolute;
-  margin: 2px;
-  inset: 0 100% 0 0;
-  border-radius: inherit;
-  background: currentColor;
-  animation: l6 2s infinite;
+.loader:before {
+  content:"Loading..."
 }
-@keyframes l6 {
-    100% {inset:0}
-}
+@keyframes l2 {to{background-size: 100% 3px}}
 
 @media screen and (max-width:899px) {
 .col_width {
