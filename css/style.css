@@ -1501,18 +1501,20 @@ main {
 }
 
 .loader {
-  width: fit-content;
-  font-weight: bold;
-  font-family: sans-serif;
-  font-size: 30px;
-  padding-bottom: 8px;
-  background: linear-gradient(currentColor 0 0) 0 100%/0% 3px no-repeat;
-  animation: l2 2s linear infinite;
+	width: fit-content;
+	font-weight: bold;
+	font-family: sans-serif;
+	font-size: 30px;
+	padding-bottom: 8px;
+	background: linear-gradient(currentColor 0 0) 0 100%/0% 3px no-repeat;
+	animation: l2 2s linear infinite;
+	margin: 30px;
 }
 .loader:before {
-  content:"Loading..."
+	content:"Loading..."
 }
 @keyframes l2 {to{background-size: 100% 3px}}
+
 
 @media screen and (max-width:899px) {
 .col_width {
