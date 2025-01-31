@@ -180,42 +180,39 @@
     const selectedOption = document.querySelector('input[name="course"]:checked')?.value;
     const selectedSubOption = document.querySelector('input[name="course2"]:checked')?.value;
 
-    const openElements = document.querySelectorAll(".open01, .open02, .open03, .open04, .open05, .open06, .open07, .open08, .open09, .open10, .open11");
+    const openElements = $(".open01, .open02, .open03, .open04, .open05, .open06, .open07, .open08, .open09, .open10, .open11");
 
-    // すべての要素を非表示にする
-    openElements.forEach(element => element.style.display = "none");
+    // すべての要素をスライドアップ（非表示）
+    openElements.slideUp(300);
 
     // メインの開閉処理
     if (selectedOption) {
-      const targetElement = document.querySelector(`.open${selectedOption.slice(-2)}`);
-      if (targetElement) {
-        targetElement.style.display = "block";
+      const targetElement = $(`.open${selectedOption.slice(-2)}`);
+      if (targetElement.length) {
+        targetElement.slideDown(300);
       }
     }
 
     // 「口座振替でお支払い」を選択した場合、`open02` を開く
     if (selectedOption === "change02") {
-      document.querySelector(".open02").style.display = "block";
+      $(".open02").slideDown(300);
 
       // 口座登録方法の選択に応じて `open03` や `open04` を開く
       if (selectedSubOption === "change03") {
-        document.querySelector(".open03").style.display = "block";
+        $(".open03").slideDown(300);
       }
       if (selectedSubOption === "change04") {
-        document.querySelector(".open04").style.display = "block";
+        $(".open04").slideDown(300);
       }
     }
   }
 
-  // イベントリスナーを追加
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll('input[name="course"], input[name="course2"]').forEach(input => {
-      input.addEventListener("change", customCalculate);
-    });
-
+  $(document).ready(function () {
+    $('input[name="course"], input[name="course2"]').on("change", customCalculate);
     customCalculate(); // 初期状態の適用
   });
 </script>
+
 
   
 </body>
