@@ -198,7 +198,7 @@
     // すでに表示されているものを除外しつつ、他を閉じる
     allSections.each(function () {
       if (!elementsToShow.includes(`.${this.className}`)) {
-        $(this).slideUp(200);
+        $(this).slideUp(100);
       }
     });
 
@@ -206,7 +206,7 @@
     elementsToShow.forEach(selector => {
       const element = $(selector);
       if (element.is(":hidden")) {
-        element.slideDown(200);
+        element.slideDown(100);
       }
     });
   }
