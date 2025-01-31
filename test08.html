@@ -107,17 +107,17 @@
   <section>  
    <input type="radio" id="change02" name="course" onchange="customCalculate()" value="change02">
    <label for="change02" style="font-weight: bold;font-size: large;">口座振替でお支払い</label><br>
-  <div class="open02">
+  <div class="open02" style="margin-left: 40px;">
    <input type="radio" id="change03" name="course2" onchange="customCalculate()" value="change03">
    <label for="change03" style="font-weight: bold;font-size: large;">webでの口座登録</label><br>   
-    <div class="open03" style="margin-left: 40px;">
+    <div class="open03">
       <div class="btn">
         <a href="#" id="" style="background-color: #D5743c; padding: 5px 50px; margin: 20px;">外部サイトへ</a>
       </div>
     </div>
    <input type="radio" id="change04" name="course2" onchange="customCalculate()" value="change04">
    <label for="change04" style="font-weight: bold;font-size: large;">紙用紙での口座登録</label><br>   
-    <div class="open04" style="margin-left: 40px;">
+    <div class="open04">
       <div class="btn">
         <a href="pdf/sample.pdf" target="_blank" id="" style="background-color: #D5743c; padding: 5px 50px; margin: 20px;">口座振替依頼書をダウンロード（PDF）</a>
       </div>
@@ -180,31 +180,35 @@
     const selectedOption = document.querySelector('input[name="course"]:checked')?.value;
     const selectedSubOption = document.querySelector('input[name="course2"]:checked')?.value;
 
-    const openElements = $(".open01, .open02, .open03, .open04, .open05, .open06, .open07, .open08, .open09, .open10, .open11");
+    // すべての要素を取得
+    const allSections = $(".open01, .open02, .open03, .open04, .open05, .open06, .open07, .open08, .open09, .open10, .open11");
 
-    // すべての要素をスライドアップ（非表示）
-    openElements.slideUp(300);
+    // 開くべき要素のリストを作成
+    let elementsToShow = [];
 
-    // メインの開閉処理
     if (selectedOption) {
-      const targetElement = $(`.open${selectedOption.slice(-2)}`);
-      if (targetElement.length) {
-        targetElement.slideDown(300);
-      }
+      elementsToShow.push(`.open${selectedOption.slice(-2)}`);
     }
-
-    // 「口座振替でお支払い」を選択した場合、`open02` を開く
     if (selectedOption === "change02") {
-      $(".open02").slideDown(300);
-
-      // 口座登録方法の選択に応じて `open03` や `open04` を開く
-      if (selectedSubOption === "change03") {
-        $(".open03").slideDown(300);
-      }
-      if (selectedSubOption === "change04") {
-        $(".open04").slideDown(300);
-      }
+      elementsToShow.push(".open02");
+      if (selectedSubOption === "change03") elementsToShow.push(".open03");
+      if (selectedSubOption === "change04") elementsToShow.push(".open04");
     }
+
+    // すでに表示されているものを除外しつつ、他を閉じる
+    allSections.each(function () {
+      if (!elementsToShow.includes(`.${this.className}`)) {
+        $(this).slideUp(300);
+      }
+    });
+
+    // 開くべき要素をスライドダウン
+    elementsToShow.forEach(selector => {
+      const element = $(selector);
+      if (element.is(":hidden")) {
+        element.slideDown(300);
+      }
+    });
   }
 
   $(document).ready(function () {
