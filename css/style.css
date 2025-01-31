@@ -1485,12 +1485,14 @@ main {
 
 .box1 {
     padding: 0.5em 1em;
-    margin: 2em 0;
+    margin: 0.5em 0;
     font-weight: bold;
-    color: red;/*文字色*/
+    color: red;
     background: #FFF;
-    border: solid 3px red;/*線*/
-    border-radius: 10px;/*角の丸み*/
+    border: solid 3px red;
+    border-radius: 10px;
+    width: 500px;
+    text-align: center;
 }
 .box1 p {
     margin: 0; 
