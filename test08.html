@@ -99,9 +99,9 @@
         </tr>
       </tbody>
     </table>
-    <div class="btn">
-      <a href="" style="background-color: #D5743c; padding: 5px 50px;">確認画面へ</a>
-    </div>
+<div class="btn">
+  <a href="#" id="toggleButton" style="background-color: #D5743c; padding: 5px 50px;">確認画面へ</a>
+</div>
   </div>
 </section>
 <section>  
@@ -146,6 +146,21 @@
   
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("toggleButton");
+    const box = document.querySelector(".box1");
 
+    btn.addEventListener("click", function (event) {
+      event.preventDefault(); // ページ遷移を防ぐ
+      if (box.style.display === "none" || box.style.display === "") {
+        box.style.display = "block";
+      } else {
+        box.style.display = "none";
+      }
+    });
+  });
+</script>
+  
 </body>
 </html>
