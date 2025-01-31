@@ -32,8 +32,8 @@
 <h4 style="border-bottom: 1px solid; font-weight: bold; font-size: large; width:800px;">決済方法選択</h4>
 
 
-  <input type="radio" id="change01" name="course" onchange="" value="change01">
-  <label for="change01" style="font-weight: bold;font-size: large; color: #0090B0;">クレジットカードでお支払い</label>  
+  <input type="radio" id="change01" name="course" onchange="" value="change01" class="course">
+  <label for="change01" style="font-weight: bold;font-size: large; color: #0090B0;" class="course">クレジットカードでお支払い</label>  
   <br>
       <div class="box1">
         <p>入力して下さい</p>
@@ -102,6 +102,12 @@
           <td style="text-align:left;">
             お申込みされる方（保険契約者）と同一名義のカードをご登録ください。
           </td>
+        </tr>        
+        <tr>
+          <th>ご注意２</th>
+          <td style="text-align:left;">
+            本日中にお申込みが完了した場合、責任開始日は到着日の翌1日となります。
+          </td>
         </tr>
       </tbody>
    </table>
@@ -115,8 +121,9 @@
         </tr>
    </table>
   
-   <input type="radio" id="change02" name="course" onchange="" value="change02">
-   <label for="change02" style="font-weight: bold;font-size: large; color: #0090B0;">口座振替でお支払い（WEBでの口座登録）</label><br>
+   <input type="radio" id="change02" name="course" onchange="" value="change02" class="course">
+   <label for="change02" style="font-weight: bold;font-size: large; color: #0090B0;" class="course">口座振替でお支払い（WEBでの口座登録）</label><br>
+    <p style="font-weight: bold; margin:10px;">「登録（外部サイトへ）」をクリックし、口座をご登録ください。</p>
       <table class="ta1" style="width:800px; border:none;">
       <tbody>
         <tr style="border: none;">
@@ -137,20 +144,28 @@
             お申込みされる方（保険契約者）と同一名義の口座をご登録ください。
           </td>
         </tr>
+        <tr>
+          <th>ご注意２</th>
+          <td style="text-align:left;">
+            口座振替依頼書の登録が毎月の～**日の場合、責任開始日は到着日の翌月1日となります。<br>
+            口座振替依頼書の登録が毎月の**～末日の場合、責任開始日は到着日の翌々月1日となります。
+          </td>
+        </tr>
+        
       </tbody>
   </table>
   <table class="ta1" style="width:800px; border:none;">
         <tr style="border-bottom: 1px solid;">
           <td>
             <div class="btn">
-              <a href="#" id="" style="background-color: #D5743c; padding: 5px 50px; margin: 20px;">外部サイトへ</a>
+              <a href="#" id="" style="background-color: #D5743c; padding: 5px 50px; margin: 20px;">登録（外部サイトへ）</a>
             </div>
           </td>
         </tr>
   </table>
   
-  <input type="radio" id="change03" name="course" onchange="" value="change03"> 
-  <label for="change03" style="font-weight: bold;font-size: large; color: #0090B0;">口座振替でお支払い（紙用紙での口座登録）</label><br>
+  <input type="radio" id="change03" name="course" onchange="" value="change03" class="course"> 
+  <label for="change03" style="font-weight: bold;font-size: large; color: #0090B0;" class="course">口座振替でお支払い（紙用紙での口座登録）</label><br>
   <p style="font-weight: bold; margin:10px;">口座振替依頼書を印刷し、ご記入・ご捺印のうえ、返信用封筒にてご返送ください。</p>
   <table class="ta1" style="width:800px; font-size: small;">
       <tbody>
