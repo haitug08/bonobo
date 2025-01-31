@@ -1500,6 +1500,42 @@ main {
     padding: 0;
 }
 
+.course input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid #cccccc;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  margin-right: 5px;
+  position: relative;
+  padding: 0;
+}
+.course input[type="radio"]:checked {
+  border-color: #00bdc7;
+}
+.course input[type="radio"]:checked::before {
+  content: "";
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  background: #00bdc7;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.course label {
+  display: inline-flex;
+  align-items: center;
+}
+
 
 @media screen and (max-width:899px) {
 .col_width {
