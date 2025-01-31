@@ -31,7 +31,6 @@
   
 <h4 style="border-bottom: 1px solid; font-weight: bold; font-size: large; width:800px;">決済方法選択</h4>
 
-
   <input type="radio" id="change01" name="course" onchange="customCalculate()" value="change01" style="width: 1rem; height: 1rem;">
   <label for="change01" style="font-weight: bold;font-size: large; color: #0090B0;">クレジットカードでお支払い</label>  
   <br>
@@ -95,30 +94,32 @@
           <td style="text-align:left;">
             <input type="text" id="" name="cardnumber" value="" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 100px;"></td>
         </tr>
-        <tr>
+        <tr style="border:none;">
           <td colspan="2">
-    <div class="ac-box" style="width:800px;">
-      <input id="ac-2" name="accordion-1" type="checkbox">
-      <label for="ac-2">■ ご注意（必ずご確認ください）</label>
-      <div class="open">
-        <table class="ta1" style="font-size: small;">
-          <tbody>
+  
+            <div class="ac-box" style="width:800px;">
+            <input id="ac-2" name="accordion-2" type="checkbox">
+            <label for="ac-2" style="padding: 5px 15px; background-color: gray;"> | ご注意（必ずご確認ください）</label>
+            <div class="open">
+            <table class="ta1" style="font-size: small;">
+            <tbody>
             <tr>
-              <th style="width:10%;">ご注意１</th>
-              <td style="text-align:left;">お申込みされる方（保険契約者）と同一名義のカードをご登録ください。</td>
+            <th style="width:10%;">ご注意１</th>
+            <td style="text-align:left;">お申込みされる方（保険契約者）と同一名義のカードをご登録ください。</td>
             </tr>
             <tr>
-              <th>ご注意２</th>
-              <td style="text-align:left;">本日中にお申込みが完了した場合、責任開始日は到着日の翌1日となります。</td>
+            <th>ご注意２</th>
+            <td style="text-align:left;">本日中にお申込みが完了した場合、責任開始日は到着日の翌1日となります。</td>
             </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+            </tbody>
+            </table>
+            </div>
+            </div>
+            
           </td>
         </tr>
         <tr style="border-bottom: 1px solid;">
-          <td>
+          <td colspan="2">
             <div class="btn">
               <a href="#" id="toggleButton" style="background-color: #D5743c; padding: 5px 50px; margin: 20px;">確認画面へ</a>
             </div>
