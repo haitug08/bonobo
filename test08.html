@@ -233,13 +233,8 @@
                     <table class="ta1" style="border:none;">
                       <tr style="border-bottom: none;">
                         <td colspan="2">
-                          <div class="btn">
-                            <a href="pdf/sample.pdf" target="_blank" id="" style="background-color: #D5743c; padding: 5px 50px;">
-                              口座振替依頼書をダウンロード（PDF）</a>
-                          </div>
-                          <div class="btn">
-                            <a href="" id="" style="background-color: #D5743c; padding: 5px 50px;">確認画面へ</a>  
-                          </div>
+                          <button id="download-pdf" class="modal-button">口座振替依頼書をダウンロード（PDF）</button>
+                          <button id="confirm-btn" class="modal-button" disabled>確認画面へ</button>
                         </td>
                       </tr>
                      </tbody>
@@ -299,6 +294,18 @@ window.addEventListener('click', (e) => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const downloadBtn = document.getElementById("download-pdf");
+    const confirmBtn = document.getElementById("confirm-btn");
+
+    downloadBtn.addEventListener("click", function() {
+        // ボタンを有効化
+        confirmBtn.removeAttribute("disabled");
+    });
+});
+  
+  
 </script>
+    
   </body>
 </html>
