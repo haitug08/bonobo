@@ -1410,7 +1410,6 @@ main {
   transition: .3s;
   box-sizing: border-box;
   display: flex; /* 追加 */
-  align-items: center; /* 追加 */
   justify-content: center; /* 追加 */
 }
 
