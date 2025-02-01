@@ -1488,6 +1488,7 @@ main {
 .modal-label {
     font-size: 1.3rem;
     padding: 10px;
+    margin: 10px;
     cursor: pointer;
     position: relative;
     display: inline-block;
