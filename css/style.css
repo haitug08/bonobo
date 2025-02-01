@@ -1485,6 +1485,20 @@ main {
     cursor: pointer;
 }
 
+.modal-label {
+	font-size: 1.3rem;
+	padding: 10px;
+}	
+
+.modal-label:hover:after {
+	border-color: #53b300;
+}
+
+.modal-toggle {
+	height: 15px;
+	width: 15px;
+}
+
 .box1 {
     padding: 0.5em 1em;
     margin: 0.5em 0;
