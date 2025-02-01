@@ -217,8 +217,112 @@
           </td>
         </tr>
       </tbody>
-    </table>
+    </table><br>
 
+<section>
+
+<h4 style="border-bottom: 1px solid; font-weight: bold; font-size: large; width:800px;">決済方法選択</h4>  
+
+  <button id="confirm-btn-1" class="modal-open js-modal-open modal-button" data-modal="modal-1">クレジットカードでお支払い</button>
+  <div id="modal-1" class="modal js-modal">
+    <div class="modal-container">
+      <div class="modal-close js-modal-close">×</div>
+      <div class="modal-content">
+        <section style="margin: 30px;">
+          <h2>クレジットカードでお支払い</h2>
+    <p style="font-weight: bold; margin:10px;">カード情報を入力し、「確認画面へ」をクリックしてください。</p>
+    <table class="ta1" style="width:800px; border:none;">
+      <tbody>              
+        <tr style="border:none;">
+          <th>利用可能なカード</th>
+          <td style="text-align:left;"><img src="images/card.jpg" style="width: 250px;"></td>
+        </tr>
+        <tr style="border:none;">
+          <th>カード番号</th>
+          <td style="text-align:left;">
+            <input type="text" id="" name="cardnumber" value="" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 300px;"></td>
+        </tr>
+        <tr style="border:none;">
+          <th>有効期限</th>
+          <td style="text-align:left;">
+            <div class="select1">
+              <select>
+                <option value="">01</option>
+                <option value="">02</option>
+                <option value="">03</option>
+                <option value="">04</option>
+                <option value="">05</option>
+                <option value="">06</option>
+                <option value="">07</option>
+                <option value="">08</option>
+                <option value="">09</option>
+                <option value="">10</option>
+                <option value="">11</option>
+                <option value="">12</option>
+              </select>月
+              <select>
+                <option value="">2025</option>
+                <option value="">2026</option>
+                <option value="">2027</option>
+                <option value="">2028</option>
+                <option value="">2029</option>
+                <option value="">2030</option>
+                <option value="">2031</option>
+                <option value="">2032</option>
+                <option value="">2033</option>
+                <option value="">2034</option>
+                <option value="">2035</option>
+                <option value="">2036</option>
+                <option value="">2037</option>
+                <option value="">2038</option>
+                <option value="">2039</option>
+                <option value="">2040</option>
+              </select>年
+            </div>
+          </td>
+        </tr>
+        <tr style="border:none;">
+          <th>セキュリティ番号</th>
+          <td style="text-align:left;">
+            <input type="text" id="" name="cardnumber" value="" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 100px;"></td>
+        </tr>
+        <tr style="border:none;">
+          <td colspan="2">
+  
+            <table class="ta1" style="font-size: small;">
+            <tbody>
+            <tr>
+            <th style="width:10%;">ご注意１</th>
+            <td style="text-align:left;">お申込みされる方（保険契約者）と同一名義のカードをご登録ください。</td>
+            </tr>
+            <tr>
+            <th>ご注意２</th>
+            <td style="text-align:left;">本日中にお申込みが完了した場合、責任開始日は翌月1日となります。</td>
+            </tr>
+            </tbody>
+            </table>
+            
+          </td>
+        </tr>
+        <tr style="border:none;">
+          <td>      
+            <div class="box1"><p>入力して下さい</p></div>
+          </td>
+        </tr>
+        <tr style="border-bottom: 1px solid;">
+          <td colspan="2">
+            <button id="agree-btn-1" class="agree-btn modal-button">確認画面へ</button>
+          </td>
+        </tr>
+   </table>
+          
+        </section>
+      </div>
+    </div>
+  </div>  
+  
+</section>
+  
 
 </div>
 </main>
@@ -239,20 +343,39 @@
   
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="js/main.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const btn = document.getElementById("toggleButton");
-    const box = document.querySelector(".box1");
 
-    btn.addEventListener("click", function (event) {
-      event.preventDefault(); // ページ遷移を防ぐ
-      if (box.style.display === "none" || box.style.display === "") {
-        box.style.display = "block";
-      } else {
-        box.style.display = "none";
-      }
-    });
+<script>
+document.querySelectorAll('.js-modal-open').forEach(openButton => {
+  const modalId = openButton.getAttribute('data-modal'); // 対応するモーダルID
+  const modal = document.getElementById(modalId);
+  const closeButton = modal.querySelector('.js-modal-close');
+  const agreeButton = modal.querySelector('.agree-btn');
+
+  // モーダルを開く
+  openButton.addEventListener('click', () => {
+    modal.classList.add('is-active');
   });
-</script>
+
+  // モーダルを閉じる
+  closeButton.addEventListener('click', () => {
+    modal.classList.remove('is-active');
+  });
+
+  // 同意ボタンクリック時の処理
+  agreeButton.addEventListener('click', () => {
+    modal.classList.remove('is-active');
+    openButton.textContent = '確認済み';
+    openButton.style.backgroundColor = 'gray';
+    openButton.style.cursor = 'pointer'; // 再クリック可能にする
+  });
+
+  // モーダル外クリックで閉じる
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('is-active');
+    }
+  });
+});
+</script> 
 </body>
 </html>
