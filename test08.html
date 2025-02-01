@@ -302,10 +302,15 @@ window.addEventListener('click', (e) => {
 document.addEventListener("DOMContentLoaded", function() {
     const downloadBtn = document.getElementById("download-pdf");
     const confirmBtn = document.getElementById("confirm-btn");
+    const confirmLink = confirmBtn.querySelector("a");
 
     downloadBtn.addEventListener("click", function() {
-        // ボタンを有効化
+        // ボタンのスタイルを変更
         confirmBtn.removeAttribute("disabled");
+        confirmLink.style.backgroundColor = "#D5743c";
+
+        // href を変更
+        confirmLink.setAttribute("href", "https://www.yahoo.co.jp/");
     });
 });
   
