@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>bonobo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,277 +9,145 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
-  </head>
-  <body>
+</head>
+<body>
     <div class="wrapper">
-      <header>
-      <h1 id="logo">
-        <a href="index.html">
-          <img src="" alt="">
-        </a>
-      </h1>
-      <div id="menubar_hdr">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      </header>
-      <div id="menubar">
-        <div id="navigation"></div>
-      </div>
-      <main>
-        <div class="zen-kaku-gothic-new-regular">
-          <h2>申込フォームでの決済方法選択について</h2>
-          <p style="margin: 0 20px 50px;">決済方法選択の案（参考：
-            <a href="pdf/kessai_select.pdf" target="_blank">ii-inc社のイメージ</a>）
-          </p>
-          <section>
-            <h4 style="border-bottom: 1px solid; font-weight: bold; font-size: large; width:800px;">決済方法選択</h4>
-            <button id="confirm-btn-1" class="modal-open js-modal-open modal-button" data-modal="modal-1">クレジットカードでお支払い</button>
-            <div id="modal-1" class="modal js-modal">
-              <div class="modal-container">
-                <div class="modal-close js-modal-close">×</div>
-                <div class="modal-content">
-                  <section style="margin: 30px;">
-                    <h2>クレジットカードでお支払い</h2>
-                    <p style="font-weight: bold; margin:10px;">カード情報を入力し、「確認画面へ」をクリックしてください。</p>
-                    <table class="ta1" style="border:none;">
-                      <tbody>
-                      <tr style="border:none;">
-                        <th>利用可能なカード</th>
-                        <td style="text-align:left;">
-                          <img src="images/card.jpg" style="width: 250px;">
-                        </td>
-                      </tr>
-                      <tr style="border:none;">
-                        <th>カード番号</th>
-                        <td style="text-align:left;">
-                          <input type="text" id="" name="cardnumber" value="" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 300px;">
-                        </td>
-                      </tr>
-                      <tr style="border:none;">
-                        <th>有効期限</th>
-                        <td style="text-align:left;">
-                          <div class="select1">
-                            <select>
-                              <option value="">01</option>
-                              <option value="">02</option>
-                              <option value="">03</option>
-                              <option value="">04</option>
-                              <option value="">05</option>
-                              <option value="">06</option>
-                              <option value="">07</option>
-                              <option value="">08</option>
-                              <option value="">09</option>
-                              <option value="">10</option>
-                              <option value="">11</option>
-                              <option value="">12</option>
-                            </select>月 
-                            <select>
-                              <option value="">2025</option>
-                              <option value="">2026</option>
-                              <option value="">2027</option>
-                              <option value="">2028</option>
-                              <option value="">2029</option>
-                              <option value="">2030</option>
-                              <option value="">2031</option>
-                              <option value="">2032</option>
-                              <option value="">2033</option>
-                              <option value="">2034</option>
-                              <option value="">2035</option>
-                              <option value="">2036</option>
-                              <option value="">2037</option>
-                              <option value="">2038</option>
-                              <option value="">2039</option>
-                              <option value="">2040</option>
-                            </select>年 
-                          </div>
-                        </td>
-                      </tr>
-                      <tr style="border:none;">
-                        <th>セキュリティ番号</th>
-                        <td style="text-align:left;">
-                          <input type="text" id="" name="cardnumber" value="" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 100px;">
-                        </td>
-                      </tr>
-                      <tr style="border:none;">
-                        <td colspan="2">
-                          <table class="ta1" style="font-size: small;">
-                            <tbody>
-                            <tr>
-                              <th style="width:10%;">ご注意１</th>
-                              <td style="text-align:left;">お申込みされる方（保険契約者）と同一名義のカードをご登録ください。</td>
-                            </tr>
-                            <tr>
-                              <th>ご注意２</th>
-                              <td style="text-align:left;">本日中にお申込みが完了した場合、責任開始日は翌月1日となります。</td>
-                            </tr>
-                            </tbody>
-                          </table>
-                        </td>
-                      </tr>
-                     </tbody>
-                    </table>
-                    <table class="ta1" style="border:none;">
-                      <tr style="border-bottom: none;">
-                        <td>
-                          <div class="btn">
-                            <a href="" id="" style="background-color: #D5743c; padding: 5px 50px;">確認画面へ</a>
-                          </div>
-                        </td>
-                      </tr>
-                    </table>
-                  </section>
-                </div>
-              </div>
+        <header>
+            <h1 id="logo">
+                <a href="index.html">
+                    <img src="" alt="">
+                </a>
+            </h1>
+        </header>
+
+        <main>
+            <div class="zen-kaku-gothic-new-regular">
+                <h2>申込フォームでの決済方法選択について</h2>
+                <p style="margin: 0 20px 50px;">決済方法選択の案（参考：
+                    <a href="pdf/kessai_select.pdf" target="_blank">ii-inc社のイメージ</a>）
+                </p>
+                <section>
+                    <h4 style="border-bottom: 1px solid; font-weight: bold; font-size: large; width:800px;">決済方法選択</h4>
+
+                    <div class="payment-options">
+                        <input type="radio" id="radio-1" name="payment" class="modal-toggle" data-modal="modal-1">
+                        <label for="radio-1" class="modal-label">クレジットカードでお支払い</label>
+
+                        <input type="radio" id="radio-2" name="payment" class="modal-toggle" data-modal="modal-2">
+                        <label for="radio-2" class="modal-label">口座振替でお支払い（WEBでの口座登録）</label>
+
+                        <input type="radio" id="radio-3" name="payment" class="modal-toggle" data-modal="modal-3">
+                        <label for="radio-3" class="modal-label">口座振替でお支払い（紙での口座登録）</label>
+                    </div>
+
+                    <!-- モーダル 1: クレジットカード -->
+                    <div id="modal-1" class="modal">
+                        <div class="modal-container">
+                            <div class="modal-close">×</div>
+                            <div class="modal-content">
+                                <h2>クレジットカードでお支払い</h2>
+                                <p>カード情報を入力し、「確認画面へ」をクリックしてください。</p>
+                                <input type="text" placeholder="カード番号">
+                                <button>確認画面へ</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- モーダル 2: 口座振替（WEB登録） -->
+                    <div id="modal-2" class="modal">
+                        <div class="modal-container">
+                            <div class="modal-close">×</div>
+                            <div class="modal-content">
+                                <h2>口座振替でお支払い（WEBでの口座登録）</h2>
+                                <p>「登録（外部サイトへ）」をクリックし、口座をご登録ください。</p>
+                                <button>登録（外部サイトへ）</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- モーダル 3: 口座振替（紙登録） -->
+                    <div id="modal-3" class="modal">
+                        <div class="modal-container">
+                            <div class="modal-close">×</div>
+                            <div class="modal-content">
+                                <h2>口座振替でお支払い（紙での口座登録）</h2>
+                                <p>口座振替依頼書を印刷し、ご記入・ご捺印のうえ、ご返送ください。</p>
+                                <button>口座振替依頼書をダウンロード（PDF）</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
             </div>
-            <button id="confirm-btn-2" class="modal-open js-modal-open modal-button" data-modal="modal-2">口座振替でお支払い（WEBでの口座登録）</button>
-            <div id="modal-2" class="modal js-modal">
-              <div class="modal-container">
-                <div class="modal-close js-modal-close">×</div>
-                <div class="modal-content">
-                  <section style="margin: 30px;">
-                    <h2>口座振替でお支払い（WEBでの口座登録）</h2>
-                    <p style="font-weight: bold; margin:10px;">「登録（外部サイトへ）」をクリックし、口座をご登録ください。</p>
-                    <table class="ta1" style="font-size: small;">
-                      <tbody>
-                      <tr>
-                        <th style="width:10%;">ご注意１</th>
-                        <td style="text-align:left;">お申込みされる方（保険契約者）と同一名義の口座をご登録ください。 </td>
-                      </tr>
-                      <tr>
-                        <th>ご注意２</th>
-                        <td style="text-align:left;">個人名義口座の場合、登録可能な金融機関は
-                          <a href="pdf/sample.pdf" target="_blank">こちら</a>。
-                          <br>法人名義口座の場合、登録可能な金融機関は
-                          <a href="pdf/sample.pdf" target="_blank">こちら</a>。
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>ご注意３</th>
-                        <td style="text-align:left;">口座振替依頼書の登録が毎月の～**日の場合、責任開始日は到着日の翌月1日となります。
-                          <br>口座振替依頼書の登録が毎月の**～末日の場合、責任開始日は到着日の翌々月1日となります。 
-                        </td>
-                      </tr>
-                      </tbody>
-                    </table>
-                    <table class="ta1" style="border:none;">
-                      <tr style="border-bottom: none;">
-                        <td>
-                          <div class="btn">
-                            <a href="" id="" style="background-color: #D5743c; padding: 5px 50px; margin: 20px;">登録（外部サイトへ）</a>
-                          </div>
-                        </td>
-                      </tr>
-                    </table>
-                  </section>
-                </div>
-              </div>
-            </div>
-            <button id="confirm-btn-3" class="modal-open js-modal-open modal-button" data-modal="modal-3">口座振替でお支払い（紙での口座登録）</button>
-            <div id="modal-3" class="modal js-modal">
-              <div class="modal-container">
-                <div class="modal-close js-modal-close">×</div>
-                <div class="modal-content">
-                  <section style="margin: 30px;">
-                    <h2>口座振替でお支払い（紙での口座登録）</h2>
-                    <p style="font-weight: bold; margin:10px;">口座振替依頼書を印刷し、ご記入・ご捺印のうえ、返信用封筒にてご返送ください。</p>
-                    <table class="ta1" style="font-size: small;">
-                      <tbody>
-                      <tr>
-                        <th style="width:10%;">ご注意１</th>
-                        <td style="text-align:left;">お申込みされる方（保険契約者）と同一名義の口座をご登録ください。 </td>
-                      </tr>
-                      <tr>
-                        <th>ご注意２</th>
-                        <td style="text-align:left;">⼝座振替依頼書をダウンロードされる⽅は、事前に以下の留意点をご確認ください 
-                          <ol>
-                            <li>⾃動払込利⽤申込書⽤紙の規格等は、次のとおりであること。 
-                              <ul>
-                                <li>⼤きさ：⽇本⼯業規格A4（拡⼤・縮⼩印刷をしていないこと）</li>
-                                <li>紙⾊：表裏とも⽩⾊（印字が⿊⾊であること）</li>
-                                <li>紙質：⼀般的なコピー⽤紙と同等のもの（感熱紙及びロール紙は不可）</li>
-                              </ul>
-                            </li>
-                            <li>預⾦者の⽒名（フリガナを含む）、住所（記⼊欄がある場合に限る）および通常貯⾦通帳の記号番号は、 
-                              必ず筆書（パソコン等による印字は不可）により⾏い、通常貯⾦の利⽤時にお届けの印章により押印すること。</li>
-                            <li>⾃動払込利⽤申込書⽤紙の記載内容を改ざんしないこと⼜はされていないこと。</li>
-                          </ol>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>ご注意３</th>
-                        <td style="text-align:left;">口座振替依頼書の弊社到着が毎月の1～20日の場合、責任開始日は到着日の翌々月1日となります。
-                          <br>口座振替依頼書の弊社到着が毎月の21～末日の場合、責任開始日は到着日の翌翌々月1日となります。 
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>ご注意４</th>
-                        <td style="text-align:left;">お申込みから60日経過しても口座振替依頼書の到着が確認できない場合、
-                          お引き受けできない可能性もございます。 </td>
-                      </tr>
-                     </tbody>
-                    </table>
-                    <table class="ta1" style="border:none;">
-                      <tr style="border-bottom: none;">
-                        <td colspan="2">
-                          <div class="btn">
-                            <a href="pdf/sample.pdf" target="_blank" id="" style="background-color: #D5743c; padding: 5px 50px;">
-                              口座振替依頼書をダウンロード（PDF）</a>
-                          </div>
-                          <div class="btn">
-                            <a href="" id="" style="background-color: #D5743c; padding: 5px 50px;">確認画面へ</a>  
-                          </div>
-                        </td>
-                      </tr>
-                     </tbody>
-                    </table>
-                    <br>
-                  </section>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </main>
-      <footer>
-        <div class="zen-kaku-gothic-new-regular">
-          <img src="images/logo_bonobo.png" alt="" style="width: 250px; margin-top: 40px;">
-          <p class="tenor-sans-regular">Trouble-free World</p>
-          <p>まずは、お気軽にご相談ください</p>
-          <div class="btn2">
-            <button type="button">お問い合わせ</button>
-            <button type="button">資料請求</button>
-          </div>
-          <p>会社概要　　個人情報保護方針　　お知らせ　　よくあるご質問</p>
-        </div>
-      </footer>
+        </main>
+
+        <footer>
+            <p>© 2025 bonobo. All Rights Reserved.</p>
+        </footer>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/main.js"></script>
+
     <script>
-document.querySelectorAll('.js-modal-open').forEach(openButton => {
-  const modalId = openButton.getAttribute('data-modal'); // 対応するモーダルID
-  const modal = document.getElementById(modalId);
-  const closeButton = modal.querySelector('.js-modal-close');
+        document.querySelectorAll('.modal-toggle').forEach(radio => {
+            radio.addEventListener('change', function () {
+                document.querySelectorAll('.modal').forEach(modal => modal.classList.remove('is-active'));
+                const modalId = this.getAttribute('data-modal');
+                document.getElementById(modalId).classList.add('is-active');
+            });
+        });
 
-  // モーダルを開く
-  openButton.addEventListener('click', () => {
-    modal.classList.add('is-active');
-  });
+        document.querySelectorAll('.modal-close').forEach(closeButton => {
+            closeButton.addEventListener('click', function () {
+                this.closest('.modal').classList.remove('is-active');
+                document.querySelectorAll('.modal-toggle').forEach(radio => radio.checked = false);
+            });
+        });
+    </script>
 
-  // モーダルを閉じる
-  closeButton.addEventListener('click', () => {
-    modal.classList.remove('is-active');
-  });
+    <style>
+        .payment-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .modal-label {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #D5743c;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal.is-active {
+            display: flex;
+        }
+        .modal-container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            position: relative;
+            width: 50%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+    </style>
 
-  // モーダル外クリックで閉じる
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.remove('is-active');
-    }
-  });
-});
-</script>
-  </body>
+</body>
 </html>
