@@ -332,6 +332,28 @@ document.addEventListener("DOMContentLoaded", function() {
         confirmLink.setAttribute("href", "https://www.yahoo.co.jp/");
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    // 今日の日付を取得（西暦/年月日）
+    const today = new Date();
+    const todayStr = today.getFullYear() + "年" + (today.getMonth() + 1) + "月" + today.getDate() + "日";
+    document.getElementById("today").textContent = todayStr;
+
+    // 翌月1日（責任開始日1）の計算
+    let nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+    const commencementDate1Str = nextMonth.getFullYear() + "年" + (nextMonth.getMonth() + 1) + "月" + nextMonth.getDate() + "日";
+    document.getElementById("commencement-date1").textContent = commencementDate1Str;
+
+    // 責任開始日2の計算（口座振替の登録日による）
+    let commencementDate2;
+    if (today.getDate() <= 15) {
+        commencementDate2 = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+    } else {
+        commencementDate2 = new Date(today.getFullYear(), today.getMonth() + 2, 1);
+    }
+    const commencementDate2Str = commencementDate2.getFullYear() + "年" + (commencementDate2.getMonth() + 1) + "月" + commencementDate2.getDate() + "日";
+    document.getElementById("commencement-date2").textContent = commencementDate2Str;
+});
   
   
 </script>
