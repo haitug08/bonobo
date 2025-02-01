@@ -1395,20 +1395,23 @@ main {
 
 
 /* モーダルと背景の指定 */
-.modal{
-  position: fixed;
+.modal {
+  position: fixed; /* 追加 */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   text-align: center;
-  background: rgba(0,0,0,50%);
+  background: rgba(0,0,0,0.5); /* 透過のカンマ位置修正 */
   padding: 40px 20px;
   overflow: auto;
   opacity: 0;
   visibility: hidden;
   transition: .3s;
   box-sizing: border-box;
+  display: flex; /* 追加 */
+  align-items: center; /* 追加 */
+  justify-content: center; /* 追加 */
 }
 
 /* モーダルの擬似要素の指定 */
