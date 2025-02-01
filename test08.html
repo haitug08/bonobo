@@ -272,26 +272,33 @@
 document.querySelectorAll('.modal-toggle').forEach(radio => {
   radio.addEventListener('change', function () {
     document.querySelectorAll('.modal').forEach(modal => modal.classList.remove('is-active'));
+    
     const modalId = this.getAttribute('data-modal');
-    document.getElementById(modalId).classList.add('is-active');
-  
-  // モーダルを開く
-  openButton.addEventListener('click', () => {
-    modal.classList.add('is-active');
+    const modal = document.getElementById(modalId);
+    
+    if (modal) {
+      modal.classList.add('is-active');
+    } else {
+      console.error(`Modal with ID '${modalId}' not found.`);
+    }
   });
+});
 
-  // モーダルを閉じる
-  closeButton.addEventListener('click', () => {
-    modal.classList.remove('is-active');
+document.querySelectorAll('.modal-close').forEach(closeButton => {
+  closeButton.addEventListener('click', function () {
+    this.closest('.modal').classList.remove('is-active');
   });
+});
 
-  // モーダル外クリックで閉じる
-  window.addEventListener('click', (e) => {
+// モーダル外をクリックしたら閉じる処理
+window.addEventListener('click', (e) => {
+  document.querySelectorAll('.modal.is-active').forEach(modal => {
     if (e.target === modal) {
       modal.classList.remove('is-active');
     }
   });
 });
+
 </script>
   </body>
 </html>
