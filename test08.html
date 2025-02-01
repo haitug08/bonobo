@@ -38,6 +38,16 @@
             <button id="confirm-btn-1" class="modal-open js-modal-open modal-button" data-modal="modal-1">クレジットカードでお支払い</button>
             <button id="confirm-btn-2" class="modal-open js-modal-open modal-button" data-modal="modal-2">口座振替でお支払い（WEBでの口座登録）</button>
             <button id="confirm-btn-3" class="modal-open js-modal-open modal-button" data-modal="modal-3">口座振替でお支払い（紙での口座登録）</button>
+
+  <input type="radio" id="radio-1" name="payment" class="modal-toggle" data-modal="modal-1">
+  <label for="radio-1" class="modal-label">クレジットカードでお支払い</label>
+
+  <input type="radio" id="radio-2" name="payment" class="modal-toggle" data-modal="modal-2">
+  <label for="radio-2" class="modal-label">口座振替でお支払い（WEBでの口座登録）</label>
+
+  <input type="radio" id="radio-3" name="payment" class="modal-toggle" data-modal="modal-3">
+  <label for="radio-3" class="modal-label">口座振替でお支払い（紙での口座登録）</label>
+            
             
             <div id="modal-1" class="modal js-modal">
               <div class="modal-container">
@@ -260,12 +270,14 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/main.js"></script>
-    <script>
-document.querySelectorAll('.js-modal-open').forEach(openButton => {
-  const modalId = openButton.getAttribute('data-modal'); // 対応するモーダルID
-  const modal = document.getElementById(modalId);
-  const closeButton = modal.querySelector('.js-modal-close');
-
+    
+<script>
+document.querySelectorAll('.modal-toggle').forEach(radio => {
+  radio.addEventListener('change', function () {
+    document.querySelectorAll('.modal').forEach(modal => modal.classList.remove('is-active'));
+    const modalId = this.getAttribute('data-modal');
+    document.getElementById(modalId).classList.add('is-active');
+  
   // モーダルを開く
   openButton.addEventListener('click', () => {
     modal.classList.add('is-active');
