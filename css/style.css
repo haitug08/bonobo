@@ -1488,26 +1488,16 @@ main {
 .modal-label {
 	font-size: 1.3rem;
 	padding: 10px;
-	border: solid 6px #000;
+	cursor: pointer;
+	text-decoration: underline;
 }	
-
 .modal-label:after {
-	background-color: #000;
-	transform: translate(-50%, -50%) scale(0, 0);
-	transition: transform ease 0.4s;
 }
 .modal-label:hover:after {
-	transform: translate(-50%, -50%) scale(1.1, 1.1);
 }
-
 .modal-label:before {
-	border-style: solid;
-	border-color: #000;
-	transform: translate(-50%, -50%) rotate(45deg);
-	transition: border-color ease 0.1s;
 }
 .modal-label:hover:before {
-	border-color: #fff;
 }
 
 
