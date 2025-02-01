@@ -347,22 +347,34 @@ document.addEventListener("DOMContentLoaded", function() {
     // 責任開始日の計算
     let commencementDate1 = new Date(today);
     let commencementDate2 = new Date(today);
+    let commencementDate3 = new Date(today);
+    let commencementDate4 = new Date(today);
 
-    // 月初～15日なら翌月1日、それ以降なら翌々月1日
+    // commencementDate1: 月初～15日なら翌月1日、それ以降なら翌々月1日
     if (today.getDate() <= 15) {
         commencementDate1.setMonth(today.getMonth() + 1, 1);
     } else {
         commencementDate1.setMonth(today.getMonth() + 2, 1);
     }
 
-    // 口座振替 (WEB登録) の場合の責任開始日（例: 翌月1日）
+    // commencementDate2: 口座振替 (WEB登録) の場合の責任開始日（翌月1日）
     commencementDate2.setMonth(today.getMonth() + 1, 1);
 
+    // commencementDate3: 翌々月の1日
+    commencementDate3.setMonth(today.getMonth() + 2, 1);
+
+    // commencementDate4: 翌翌々月の1日
+    commencementDate4.setMonth(today.getMonth() + 3, 1);
+
+    // 日付を YYYY年MM月DD日 形式にフォーマットする関数
     const formatDate = (date) => date.getFullYear() + "年" + (date.getMonth() + 1) + "月" + date.getDate() + "日";
 
     document.querySelectorAll("#commencement-date1").forEach(el => el.textContent = formatDate(commencementDate1));
     document.querySelectorAll("#commencement-date2").forEach(el => el.textContent = formatDate(commencementDate2));
+    document.querySelectorAll("#commencement-date3").forEach(el => el.textContent = formatDate(commencementDate3));
+    document.querySelectorAll("#commencement-date4").forEach(el => el.textContent = formatDate(commencementDate4));
 });
+
 
   
   
