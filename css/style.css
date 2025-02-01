@@ -1486,23 +1486,27 @@ main {
 }
 
 .modal-label {
-	font-size: 1.3rem;
-	padding: 10px;
-	cursor: pointer;
-	text-decoration: underline;
-}	
-.modal-label:after {
-}
-.modal-label:hover:after {
-}
-.modal-label:before {
-}
-.modal-label:hover:before {
+    font-size: 1.3rem;
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
 }
 
+.modal-label::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
 
-.modal-label:hover {
-	border-color: #53b300;
+.modal-label:hover::after {
+    width: 100%;
+    left: 0;
 }
 
 .modal-toggle {
