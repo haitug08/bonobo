@@ -30,6 +30,17 @@
       <main>
         <div class="zen-kaku-gothic-new-regular">
           <h2>申込フォームでの決済方法選択について</h2>
+          <p>
+            ii-inc様のイメージを元に、決済方法選択画面のモックを作成しました。<br>
+            実際の決済システムへ連携していません。動きや流れ、ユーザーへの見せ方の確認としてご利用ください。<br>
+            <br>
+            【使い方】<br>
+            決済方法をクリックすると、モーダルウィンドウが表示されます。<br>
+            各モーダル内にボタンから画面遷移するイメージです。（テストなのでyahooに遷移）<br>
+            クレカやWEB口振への促しとして、紙口振はまずは非表示にし「こちら」をクリックで表示となります。<br>
+            紙口振のモーダル内について、ダウンロードボタンをクリック後、確認画面へのボタンが有効になる…というイメージです。<br>
+            各モーダル内に本日の日付をJSで表示し、その日付から計算された責任開始日を表示しています。<br>
+          </p>
 
           <section style="padding: 10px; margin:  10px 10px 30px 10px;">
             <h4 style="border-bottom: 1px solid; font-weight: bold; font-size: large; width:800px;">決済方法選択</h4>
@@ -143,7 +154,7 @@
                       <tr style="border-bottom: none;">
                         <td>
                           <div class="btn">
-                            <a href="" id="" style="background-color: #D5743c; padding: 5px 50px;">確認画面へ</a>
+                            <a href="https://www.yahoo.co.jp/" target="_blank" id="" style="background-color: #D5743c; padding: 5px 50px;">確認画面へ</a>
                           </div>
                         </td>
                       </tr>
@@ -246,9 +257,9 @@
                       </tr>
                       <tr>
                         <td colspan="2">本日は「<span id="today" style="font-weight: bold; color: #0090B0;"></span>」です。<br>
-                          口座振替依頼書の到着が1～20日の場合、責任開始日は
+                          口座振替依頼書の到着が今月の1～20日の場合、責任開始日は
                           「<span id="commencement-date3" style="font-weight: bold; color: #0090B0;"></span>」となる予定です。<br>
-                          口座振替依頼書の到着が21～月末の場合、責任開始日は
+                          口座振替依頼書の到着が今月の21～月末の場合、責任開始日は
                           「<span id="commencement-date4" style="font-weight: bold; color: #0090B0;"></span>」となる予定です。</td>
                       </tr>   
                      </tbody>
@@ -261,7 +272,7 @@
                               口座振替依頼書をダウンロード（PDF）</a>
                           </button>
                           <button id="confirm-btn" class="btn" style="border: none; background-color: white; display: block;" disabled>
-                            <a href="" id="" style="background-color: gray; padding: 5px 50px;">確認画面へ</a>  
+                            <a href="https://www.yahoo.co.jp/" target="_blank" id="" style="background-color: gray; padding: 5px 50px;">確認画面へ</a>  
                           </button>
                         </td>
                       </tr>
