@@ -421,7 +421,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const response = await fetch(`txt/${type}.txt`); // "txt"フォルダ内のファイルを読み込む
       if (!response.ok) throw new Error("Network response was not ok");
       const text = await response.text();
-      document.querySelector(`.${targetClass}`).innerHTML = text.replace(/\n/g, "<br>"); // 改行を<br>に変換
+      document.querySelector(`.${targetClass}`).innerHTML = text;
     } catch (error) {
       console.error(`Error loading ${type} bank list:`, error);
       document.querySelector(`.${targetClass}`).innerHTML = "データの取得に失敗しました";
@@ -430,7 +430,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // 各リストを読み込む
   loadBankList("personal", "description");  // 個人名義
-  loadBankList("corporate", "description1"); // 法人名義  
+  loadBankList("corporate", "description1"); // 法人名義
+  
 </script>
   
   </body>
