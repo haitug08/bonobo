@@ -120,6 +120,18 @@ $(function(){
         $('#navigation').load('navigation.html'); 
         });
 
+//　ヘッダーの読み込み
+$(function(){
+        $('#header').load('header.html'); 
+        });
+
+//　フッターの読み込み
+$(function(){
+        $('#footer').load('footer.html'); 
+        });
+
+
+
 //表示・非表示切り替え
 function customCalculate() {
     const selectedOption = document.querySelector('input[name="course"]:checked').value;
