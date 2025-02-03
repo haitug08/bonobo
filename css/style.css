@@ -80,7 +80,6 @@ a:hover {
 header {
 	display: flex;			/*flexボックスを使う指定*/
 	align-items: center;	/*垂直揃えの指定。上下中央に配置されるように。*/
-	padding: 5px 20px;		/*上下、左右へのヘッダー内の余白*/
 	background: #0090B0;		/*背景色*/
 	color: #fff;			/*文字色*/
 }
