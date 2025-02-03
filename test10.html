@@ -32,32 +32,31 @@
 <ul>
   <li>「収納代行用のID（数字12桁）」と「法人名」を申込フォーム側からPOST（1件のレコードを登録）し、kintone側で保存されるかのテスト
     <ul>
-      <li>■ URL<br>
+      <li> URL<br>
         https://asiro-ssi.cybozu.com/k/v1/[RESOURCE]<br>
         ※[RESOURCE]はAPIにより異なる<br>
         ※今回のテストでは[record.json]<br>
         ※参考：https://cybozu.dev/ja/kintone/docs/rest-api/<br>
       </li>
-      <li>■ ヘッダー(認証)<br>
+      <li> ヘッダー(認証)<br>
         'X-Cybozu-API-Token: [APIトークン]'<br>
         ※今回のテストでは[StjVURmNY8Q8iLnum4rc69XBHBPrhSARTZY9Abw2]<br>
       </li>
-      <li>■ アプリID<br>
+      <li> アプリID<br>
         20<br>
       </li>
-      <li>■ レコード情報<br>
+      <li> レコード情報<br>
         <ul>
-          <li>
-        ・収納代行用のID（数字12桁）
+          <li>収納代行用のID（数字12桁）
         <ul>
-          <li>・フィールドコード[Entry_API]</li>
-          <li>・type["type": "SINGLE_LINE_TEXT",]</li>
+          <li>フィールドコード[Entry_API]</li>
+          <li>type["type": "SINGLE_LINE_TEXT",]</li>
         </ul>
           </li>
-      <li>・法人名
+      <li>法人名
         <ul>
-          <li>・フィールドコード[Company1_API]</li>
-          <li>・type["type": "SINGLE_LINE_TEXT",]</li>
+          <li>フィールドコード[Company1_API]</li>
+          <li>type["type": "SINGLE_LINE_TEXT",]</li>
         </ul>
       </li>
       </li>
