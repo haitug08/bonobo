@@ -61,11 +61,10 @@
         <table class="ta1" style="max-width: 800px;">
           <caption>選択してください</caption>
           <tr>
-            <th>区分</th>
-            <td>
-              <div class="select1">
-                <select id="class1" name="class" onchange="calculate()" style="width: 300px;">
-                  <option value=" ">---</option>
+        <td style="width: 350px;">
+            <div class="select1">
+            <select id="class1" name="class" onchange="calculate()" style="width: 300px;">
+                  <option value="">区分選択</option>
                   <option value="2">法人A（100名以上300名未満）</option>
                   <option value="3">法人B（10名以上100名未満）</option>
                   <option value="4">法人C（10名未満）</option>
@@ -73,28 +72,25 @@
                 </select>
               </div>
             </td>
-          </tr>
-          <tr>
-            <th>プラン</th>
+          
             <td>
               <div class="select1">
-                <select id="plan1" name="plan" onchange="calculate()" style="width: 300px;">
-                  <option value=" ">---</option>
+                <select id="plan1" name="plan" onchange="calculate()" style="width: 150px;">
+                  <option value="">プラン選択</option>
                   <option value="1">ライト</option>
                   <option value="2">スタンダード</option>
                 </select>
               </div>
             </td>
-            <th>払込回数</th>
             <td>
               <div class="select1">
-                <select id="times1" name="times" onchange="calculate()" style="width: 300px;">
+                <select id="times1" name="times" onchange="calculate()" style="width: 100px;">
                   <option value="1">月払</option>
                   <option value="2">年払</option>
                 </select>
               </div>
             </td>
-          </tr>       
+          </tr>        
         </table>
 
         <table class="ta1" style="max-width: 800px;">
