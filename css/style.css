@@ -564,7 +564,7 @@ header #logo {
 #menubar {
 	width: 220px;				/*メニューブロックの幅*/
 	left: 0px;
-	top: 100px;		
+	top: 130px;		
 	height: calc(100% - 116px);	/*メニューブロックの高さ。上の行のtopの数値(116px)を引いた高さになります。*/
 	position: fixed;			/*スクロールしても固定表示させる設定*/
 }
