@@ -21,51 +21,10 @@
 <div class="zen-kaku-gothic-new-regular">
 
 <section>
-<h2>APIテスト（最小単位）</h2>
-<h3>「収納代行用のID（数字12桁）」と「法人名」を申込フォーム側からPOST（1件のレコードを登録）し、kintone側で保存されるかのテスト</h3>
-        <p>プログレス社・金沢様より提供された情報は以下の通り。</p>
-    <ul>
-      <li> URL<br>
-        https://asiro-ssi.cybozu.com/k/v1/[RESOURCE]<br>
-        ※ [RESOURCE]はAPIにより異なる<br>
-        ※ 今回のテストでは[record.json]<br>
-        ※ 参考：https://cybozu.dev/ja/kintone/docs/rest-api/<br>
-      </li>
-      <li> ヘッダー(認証)<br>
-        'X-Cybozu-API-Token: [APIトークン]'<br>
-        ※ 今回のテストでは[StjVURmNY8Q8iLnum4rc69XBHBPrhSARTZY9Abw2]<br>
-      </li>
-      <li> アプリID<br>
-        20<br>
-      </li>
-      <li> レコード情報<br>
-        <ul>
-          <li>収納代行用のID（数字12桁）
-        <ul>
-          <li>フィールドコード[Entry_API]</li>
-          <li>type["type": "SINGLE_LINE_TEXT",]</li>
-        </ul>
-          </li>
-      <li>法人名
-        <ul>
-          <li>フィールドコード[Company1_API]</li>
-          <li>type["type": "SINGLE_LINE_TEXT",]</li>
-        </ul>
-      </li>
-      </li>
-    </ul>
-※ 参考：<a href="https://cybozu.dev/ja/kintone/docs/overview/field-types/ target="_blank">https://cybozu.dev/ja/kintone/docs/overview/field-types/</a>
+<h2>要件定義</h2>
+<h3>3/1または4/1までの要件定義・・・作成中</h3>
+        <p>鋭意作成中</p>
 </section><br>
-
-<small>
-　　　<p>ii-inc様への質問<br>
-           申込完了時に発信するkintoneへのAPIとは別に、付帯サービス用のシステム（開発中）にも<br>
-           同様の顧客情報（おそらく項目は5項目程度内）を発信することは可能でしょうか？ </p><br>
-　　　<p>プログレス様への質問<br>
-           クレカ変更を希望したユーザー向けに、契約者マイページから収納代行会社の専用ページに<br>
-           直接、画面遷移させる（カード情報の非保持のため）予定ですが、この際の認証は実装できそうでしょうか？<br>
-           もし可能なら、上記の付帯サービス用のシステム（開発中）へのログインにも流用できますでしょうか？</p><br>        
-</small>        
 
 </div>
 </main>
