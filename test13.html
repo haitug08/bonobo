@@ -51,38 +51,41 @@
  <caption>2.フォーム構成</caption>
  <tr>
   <th style="width:25%;">入力項目一覧</th>
-  <td>顧客情報（詳細はこちら）<br>
+  <td>
+   顧客情報（詳細はこちら）<br>
    保険情報（詳細はこちら）<br>
    決済情報（詳細はこちら）<br>
    同意事項（詳細はこちら）<br> 
  </tr>
  <tr>
-  <th>入力項目のバリデーション</th><td>詳細はこちら</td>
+  <th>入力項目のバリデーション</th>
+  <td>必須入力、文字種、桁数制限など（詳細はこちら）</td>
  </tr>
  <tr>
   <th>フォームステップ</th>
-  <td>基本情報 → 保険選択 → 決済 → 確認・送信</td>
+  <td>契約者情報 → プラン選択 → 決済選択 → 確認 → 送信</td>
  </tr>
  <tr>
   <th>入力補助</th>
-  <td>オートコンプリート、選択式リスト、エラーメッセージ など</td>
+  <td>オートコンプリート、選択式リスト、エラーメッセージ など（詳細はこちら）/td>
  </tr>
  <tr>
   <th>送信後の処理</th>
-  <td>完了画面、確認メール送信 など</td>
+  <td>完了画面、確認メール送信など（詳細はこちら）</td>
  </tr>
 </table><br>
 
  <table class="ta2">
  <caption>3.データ連携・管理</caption>
  <tr>
-  <th style="width:25%;">申込データの保存方法</th><td>APIのpostでkintoneへ送信・保存</td> 
+  <th style="width:25%;">申込データの保存方法</th>
+  <td>APIのpostでkintoneへ送信・保存</td> 
  </tr>
  <tr>
   <th>外部システム連携</th>
-  <td>kintone<br>
-   e-SCOTT（イースコット）<br>
-   決済ステーション<br>
+  <td>kintone（保険申込内容のすべて）<br>
+   e-SCOTT（クレカ決済）<br>
+   決済ステーション（web口振）<br>
   </td>
  </tr>
  <tr>
