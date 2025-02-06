@@ -116,13 +116,25 @@
                           <input type="text" id="" name="cardnumber" value="" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 100px;">
                         </td>
                       </tr>
+                      <div class="open02">  
+                      <tr style="border:none;">
+                        <th>カード名義人（保険契約者と異なる場合のみ入力）</th>
+                        <td style="text-align:left;">
+                          <input type="text" id="" name="cardname" value="" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 300px;">
+                        </td>
+                      </tr>
+                      </div>
                       <tr style="border:none;">
                         <td colspan="2">
                           <table class="ta1" style="font-size: small;">
                             <tbody>
                             <tr>
                               <th style="width:10%;">ご注意１</th>
-                              <td style="text-align:left;">お申込みされる方（保険契約者）と同一名義のカードをご登録ください。</td>
+                              <td style="text-align:left;">
+                                <input type="radio" id="change02" name="course" onchange="customCalculate()" value="change02" style="display:none;">
+                                <span style="font-size:small; margin-left: 30px;">
+                                お申込みされる方（保険契約者）とカードの名義が異なる場合</span>
+                                <label for="change03" style="font-weight:bold; text-decoration: underline; cursor: pointer;">こちら</label></td>
                             </tr>
                             <tr>
                               <th>ご注意２</th>
@@ -251,11 +263,11 @@
                           「<span id="commencement-date3" style="font-weight: bold; color: #0090B0;"></span>」となる予定です。<br>
                           口座振替依頼書の到着が今月の21～月末の場合、責任開始日は
                           「<span id="commencement-date4" style="font-weight: bold; color: #0090B0;"></span>」となる予定です。<br>
-                          <input type="radio" id="change02" name="course" onchange="customCalculate()" value="change02" style="display:none;">
+                          <input type="radio" id="change03" name="course" onchange="customCalculate()" value="change03" style="display:none;">
                           <span style="font-size:small; margin-left: 30px;">
                             ※ 初回の保険料を銀行振込にて支払うことで、責任開始日を翌々日1日としたい場合、</span>
-                          <label for="change02" style="font-weight:bold; text-decoration: underline; cursor: pointer;">こちら</label><br>            
-                          <div class="open02">
+                          <label for="change03" style="font-weight:bold; text-decoration: underline; cursor: pointer;">こちら</label><br>            
+                          <div class="open03">
                             <p style="border-top: 0.5px dotted;padding-top: 10px;">
                               下記のお問合せ先までご連絡ください。<br><br>
                               担当代理店<br>
