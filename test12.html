@@ -21,21 +21,20 @@
 <div class="zen-kaku-gothic-new-regular">
 
 <section>
-<p>鋭意作成中・・・</p>
 <h2>bonobo全体のフロー</h2>
 <ol>        
-<li style="font-weight:bolod;">企画・準備フェーズ
+<li style="font-weight:bolod;">企画・準備フェーズ（現在進行中）
 <ol>
-<li>新商品のコンセプト策定</li>
-<li>保険商品内容の確定（補償内容、保険料、特約等）</li>
-<li>法令・コンプライアンス確認</li>
+<li>新商品のコンセプト策定（済）</li>
+<li>保険商品内容の確定（補償内容、保険料、特約等）（済）</li>
+<li>法令・コンプライアンス確認（済）</li>
 <li>監督官庁への申請および認可</li> 
 <li>WEB申込フォームの仕様設計</li>
 <li>申込システムの要件定義・設計</li>
 <li>関係部署（法務・IT・営業）との調整</li>
 </ol>
 </li><br>
-<li style="font-weight:bolod;">システム開発フェーズ
+<li style="font-weight:bolod;">システム開発フェーズ（現在進行中）
 <ol>
 <li>申込フォームの開発・テスト</li>
 <li>申込データ受け口システムの開発・テスト</li>
@@ -52,7 +51,7 @@
 <li>リスク管理計画の策定（システム障害時の対応策など）</li>
 </ol>
 </li><br>
-<li style="font-weight:bolod;">サービス開始フェーズ
+<li style="font-weight:bolod;">サービス開始フェーズ（３月中の到達目標）
 <ol>
 <li>WEB申込フォームの公開</li>
 <li>申込受付・データ管理の運用開始</li>
@@ -72,121 +71,11 @@
 </ol>
 </section><br>
 
-<section>
-<h2>申込受付完了までの業務フロー</h2>
-あ
-</section><br>
-
-<section>
-<h2>フォームの仕様設計・要件定義</h2>
-<table class="ta2">
- <caption>1.基本情報</caption>
- <tr>
-  <th style="width:25%;">フォーム名称</th>
-  <td>bonoboの保険申込フォーム</td> 
- </tr>
- <tr>
-  <th>フォームの目的</th>
-  <td>新規申込人による保険申込手続きの完遂</td>
- </tr>
- <tr>
-  <th>対象ユーザー</th>
-  <td>法人（10名未満・100名未満・300名未満）または個人事業主</td>
- </tr>
- <tr>
-  <th>対応デバイス</th>
-  <td>PC（Windows・Mac）　SP（android・iPhone）</td>
- </tr>
- <tr>
-  <th>想定されるシチュエーション</th>
-  <td>代理店による対面募集がメインとなる予定。<br>
-   代理店が顧客の表示画面の前で対面説明＆誘導＆クロージング</td>
- </tr> 
-</table><br>
- 
-<table class="ta2">
- <caption>2.フォーム構成</caption>
- <tr>
-  <th style="width:25%;">入力項目一覧</th>
-  <td>
-   顧客情報、保険情報、決済情報、同意事項（詳細はこちら）<br> 
- </tr>
- <tr>
-  <th>入力項目のバリデーション</th>
-  <td>必須入力、文字種、桁数制限など（詳細はこちら）</td>
- </tr>
- <tr>
-  <th>フォームステップ</th>
-  <td>契約者情報 → プラン選択 → 決済選択 → 確認 → 送信</td>
- </tr>
- <tr>
-  <th>入力補助</th>
-  <td>オートコンプリート、選択式リスト、エラーメッセージ</td>
- </tr>
- <tr>
-  <th>送信後の処理</th>
-  <td>完了画面（受付完了メール送信はkintoneより発信）</td>
- </tr>
-</table><br>
-
- <table class="ta2">
- <caption>3.データ連携・管理</caption>
- <tr>
-  <th style="width:25%;">申込データの保存方法</th>
-  <td>APIのpostでkintoneへ送信・保存</td> 
- </tr>
- <tr>
-  <th>外部システム連携</th>
-  <td>kintone、e-SCOTT（クレカ決済）、決済ステーション（web口振）<br>
-  </td>
- </tr>
- <tr>
-  <th>API利用の有無</th>
-  <td>有り</td>
- </tr>
- <tr>
-  <th>セキュリティ機能</th>
-  <td>データ暗号化、アクセス制御、ログ管理 など</td>
- </tr>
-</table><br>
-
-<table class="ta2">
- <caption>4.UI/UX設計</caption>
- <tr>
-  <th style="width:25%;">フォームのデザイン方針</th>
-  <td>ii社により製作し、アシロ少短にて確認・承認</td> 
- </tr>
- <tr>
-  <th>ユーザビリティの考慮</th>
-  <td>入力負担軽減、誤入力防止</td>
- </tr>
- <tr>
-  <th>SP対応</th>
-  <td>レスポンシブデザイン、タップしやすいUI</td>
- </tr>
- <tr>
-  <th>アクセシビリティ</th>
-  <td>色覚対応、音声読み上げ対応 など</td>
- </tr>
-</table><br>
-
-<table class="ta2">
- <caption>5.テスト・運用</caption>
- <tr>
-  <th style="width:25%;">テスト項目</th>
-  <td>動作確認、入力チェック、デバイス対応確認</td> 
- </tr>
- <tr>
-  <th>エラー発生時の対応</th>
-  <td>エラーメッセージ、リカバリフロー</td>
- </tr>
- <tr>
-  <th>改善・メンテナンス等</th>
-  <td>　</td>
- </tr>
-</table><br>
-  
-</section><br> 
+<small>
+＜2025/2/10追記＞<br> 
+全体を俯瞰したフローを作成しました。<br>
+あくまで参考までに・・・<br>
+</small><br>
  
 </div>
 </main>
