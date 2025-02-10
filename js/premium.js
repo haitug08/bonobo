@@ -10,6 +10,10 @@ function calculate() {
   let attorneyFeeText1 = "", attorneyFeeText2 = "", attorneyFeeText3 = "";
   let specialClauseText = "";
 
+  // 年間支払限度額と通算支払限度額（どのプランでも固定値）
+  const annualLimit = "1,000万円";
+  const totalLimit = "2,000万円";
+
   // パターン別に保険料と保険金額を設定
   if (classValue === "1") { // 個人事業主
     if (planValue === "1") { // ライトプラン
@@ -73,4 +77,8 @@ function calculate() {
   document.getElementById("attorneyFeeText3").textContent = attorneyFeeText3 || "---";
 
   document.getElementById("special-clause-result").textContent = specialClauseText || "---";
+
+  // 年間支払限度額と通算支払限度額を表示
+  document.getElementById("annual-limit-result").textContent = annualLimit;
+  document.getElementById("total-limit-result").textContent = totalLimit;
 }
