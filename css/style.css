@@ -928,7 +928,6 @@ main {
 .ac-box input:checked ~ .open{
 	height: auto;
 	margin: auto;
-	background: #fff;
 	border: 0px solid #91b3b8;
 	opacity: 1;
 	padding: 0px 0px 0px 40px;
