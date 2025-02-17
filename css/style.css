@@ -489,6 +489,7 @@ footer .pr {display: block;}
 .ta3 th, .ta3 td {
 	padding: 10px;
 	word-break: break-all;
+	border: 1px solid #919191;
 }
 
 /*th（左側）のみの設定*/
