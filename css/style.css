@@ -464,6 +464,40 @@ footer .pr {display: block;}
 	text-align: left;
 }
 
+.ta3 caption {
+	font-weight: bold;
+	padding: 10px 5px;
+	background: #666;
+	color: #fff;
+	text-align: left;
+}
+
+/*ta3テーブルブロック設定*/
+.ta3 {
+	border: 1px solid #ccc;
+	table-layout: fixed;
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+/*tr（１行分）タグ設定*/
+.ta3 tr {
+	border: 1px solid #ccc;
+}
+
+/*th（左側）、td（右側）の共通設定*/
+.ta3 th, .ta3 td {
+	padding: 10px;
+	word-break: break-all;
+}
+
+/*th（左側）のみの設定*/
+.ta3 th {
+	width: 90px;
+	text-align: left;
+}
+
+
 
 /*PAGE TOP（↑）設定
 ---------------------------------------------------------------------------*/
