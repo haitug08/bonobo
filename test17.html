@@ -34,9 +34,9 @@
 <td style="text-align: left;">
 <div class="">
 <input type="radio" id="change01" name="course" onchange="customCalculate()" value="change01">
-<label for="change01" style="width: 300px; margin: 10px;">個人事業主</label>
+<label for="change01" style="width: 300px; margin: 10px;">法人</label>
 <input type="radio" id="change02" name="course" onchange="customCalculate()" value="change02">
-<label for="change02" style="width: 300px; margin: 10px;">法人</label>
+<label for="change02" style="width: 300px; margin: 10px;">個人事業主</label>
 </div>  
 </td>  
 </tr>
@@ -58,10 +58,6 @@
 <tr>
 <th>会社名（または屋号）<span style="color:red;">※</span></th>
 <td style="text-align: left;"><input type="text" name="会社名（または屋号）" size="30" class="ws" required="required" autocomplete="off"></td>
-</tr>
-<tr>
-<th>所在地<span style="color:red;">※</span></th>
-<td style="text-align: left;"><input type="text" name="本社所在地" size="30" class="ws" required="required" autocomplete="off"></td>
 </tr>
 <tr>
 <th>URL</th>
@@ -129,10 +125,6 @@
 <td style="text-align: left;"><input type="text" name="お名前（または屋号）" size="30" class="ws" required="required" autocomplete="off"></td>
 </tr>
 <tr>
-<th>所在地<span style="color:red;">※</span></th>
-<td style="text-align: left;"><input type="text" name="所在地" size="30" class="ws" required="required" autocomplete="off"></td>
-</tr>
-<tr>
 <th>URL</th>
 <td style="text-align: left;"><input type="text" name="URL" size="30" class="ws" autocomplete="off"></td>
 </tr>
@@ -142,10 +134,25 @@
 </tr>
 <tr>
 <th>メールアドレス<span style="color:red;">※</span></th>
-<td style="text-align: left;"><input type="email" name="メールアドレス" size="30" class="ws" required="required" autocomplete="off"></td>
+<td style="text-align: left;">
+  <input type="email" name="メールアドレス" size="30" class="ws" required="required" autocomplete="off"></td>
 </tr>
 <tr>
 <th>お問い合わせ内容<span style="color:red;">※</span></th>
+<td style="text-align: left;">
+<div class="select1">
+<select>
+<option value="">保険の申込方法について</option>
+<option value="">保険料について</option>
+<option value="">保険の補償内容について</option>
+<option value="">付帯サービスについて</option>
+<option value="">代理店について</option>
+<option value="">その他</option>
+</select>
+</div>
+</tr>
+<tr>
+<th>お問い合わせ詳細<span style="color:red;">※</span></th>
 <td style="text-align: left;">
 <textarea name="お問い合わせ詳細" cols="30" rows="10" class="wl" required="required" autocomplete="off" style="height: 80px;"></textarea></td>
 </tr>
