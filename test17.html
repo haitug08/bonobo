@@ -29,6 +29,20 @@
 <p>ii社にてページ作成、プログレス社にて問い合わせのレコード保存用の箱作成</p>
 <table class="ta1">
 <tr>
+<td>
+<table class="ta1">
+<div class="">
+<input type="radio" id="change01" name="course" onchange="customCalculate()" value="change01">
+<label for="change01" style="width: 300px; margin: 10px;">個人事業主</label>
+<input type="radio" id="change02" name="course" onchange="customCalculate()" value="change02">
+<label for="change02" style="width: 300px; margin: 10px;">法人</label>
+</div>  
+</td>  
+</tr>
+</table>
+  
+<table class="ta1">  
+<tr>
 <th>事業区分<span style="color:red;">※</span></th>
 <td style="text-align: left;">
 <input id="a01" type="radio" name="事業区分" size="30" class="ws" style="width: 15px; display: inline-block; vertical-align: sub;">
@@ -102,7 +116,8 @@
 </td>
 </tr>
 </table>
-
+  
+  
 <div style="display: inline-flex;">
   <div class="btn" style="margin-left: 10px;">
   <input type="submit" value="送信する" class="btns submit g-recaptcha"
