@@ -45,15 +45,6 @@
 <div class="open01">  
 <table class="ta1">  
 <tr>
-<th>事業区分<span style="color:red;">※</span></th>
-<td style="text-align: left;">
-<input id="a01" type="radio" name="事業区分" size="30" class="ws" style="width: 15px; display: inline-block; vertical-align: sub;">
-<label for="a01">個人事業主</label>  
-<input id="a02" type="radio" name="事業区分" size="30" class="ws" style="width: 15px; display: inline-block; vertical-align: sub;">
-<label for="a02">法人</label>  
-</td>
-</tr>
-<tr>
 <th>従業員数<span style="color:red;">※</span></th>
 <td style="text-align: left;">
 <input id="b01" type="radio" name="従業員数" size="30" class="ws" style="width: 15px; display: inline-block; vertical-align: sub;">
@@ -64,7 +55,6 @@
 <label for="b03">300名未満</label>  
 </td>
 </tr>
-  
 <tr>
 <th>会社名（または屋号）<span style="color:red;">※</span></th>
 <td style="text-align: left;"><input type="text" name="会社名（または屋号）" size="30" class="ws" required="required" autocomplete="off"></td>
@@ -133,7 +123,68 @@
 </div>
   
 <div class="open02">
-<p>a</p>
+<table class="ta1">  
+<tr>
+<th>屋号（またはお名前）<span style="color:red;">※</span></th>
+<td style="text-align: left;"><input type="text" name="会社名（または屋号）" size="30" class="ws" required="required" autocomplete="off"></td>
+</tr>
+<tr>
+<th>所在地<span style="color:red;">※</span></th>
+<td style="text-align: left;"><input type="text" name="本社所在地" size="30" class="ws" required="required" autocomplete="off"></td>
+</tr>
+<tr>
+<th>URL</th>
+<td style="text-align: left;"><input type="text" name="URL" size="30" class="ws" autocomplete="off"></td>
+</tr>
+<tr>
+<th>担当者名<span style="color:red;">※</span></th>
+<td style="text-align: left;"><input type="text" name="担当者名" size="30" class="ws" required="required" autocomplete="off"></td>
+</tr>
+<tr>
+<th>電話番号<span style="color:red;">※</span></th>
+<td style="text-align: left;"><input type="tel" name="電話番号" size="30" class="ws" required="required" autocomplete="off"></td>
+</tr>
+<tr>
+<th>メールアドレス<span style="color:red;">※</span></th>
+<td style="text-align: left;"><input type="email" name="メールアドレス" size="30" class="ws" required="required" autocomplete="off"></td>
+</tr>
+<tr>
+<th>お問い合わせ内容<span style="color:red;">※</span></th>
+<td style="text-align: left;">
+<textarea name="お問い合わせ詳細" cols="30" rows="10" class="wl" required="required" autocomplete="off" style="height: 80px;"></textarea></td>
+</tr>
+<tr>
+<th>折返希望日時<span style="color:red;">※</span></th>
+<td style="text-align: left;">
+  <input type="date" name="折返希望日" size="30" class="ws" required="required" autocomplete="off" style="max-width: 200px;">
+  <input type="time" name="折返希望時間" size="30" class="ws" required="required" autocomplete="off" style="max-width: 200px;">
+</td>
+</tr>
+  
+<tr>
+<th>個人情報の取扱い<span style="color:red;">※</span></th>
+<td style="text-align: left;">
+<label class="ECM_CheckboxInput">
+  <input class="ECM_CheckboxInput-Input" type="checkbox" required="required">
+  <span class="ECM_CheckboxInput-DummyInput"></span>
+  <span class="ECM_CheckboxInput-LabelText">
+    <a href="policy/privacy.html" target="_blank">プライバシーポリシー</a>を確認のうえ、同意する</span>
+</label>
+</td>
+</tr>
+</table>
+  
+<div style="display: inline-flex;">
+  <div class="btn" style="margin-left: 10px;">
+  <input type="submit" value="送信する" class="btns submit g-recaptcha"
+    data-sitekey="6Le2JZcpAAAAAPGX6KAuDaMRjxxrDnt1TuIjGWh7"
+    data-callback="onSubmit" data-action="submit">
+  </div>
+  <div class="btn" style="margin-left: 10px;">
+  <input type="reset" value="リセット" class="btns reset" style="background: gray;">
+  </div>
+</div>
+
 </div>
   
 </form>
