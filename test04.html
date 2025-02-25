@@ -89,31 +89,55 @@ document.querySelectorAll('.js-modal-open').forEach(openButton => {
 </script> 
 
 <script>
-  // 代理店番号と代理店名のマッピング
-  const agentData = {
-    1001: "株式会社AAA",
-    1002: "株式会社BBB",
-    1003: "株式会社CCC",
-    // 必要に応じて追加
-  };
+// kintone API のエンドポイントとAPIトークン
+const KINTONE_SUBDOMAIN = "asiro-ssi"; // 例: example
+const KINTONE_APP_ID = 91; // 取引先一覧アプリのアプリID
+const API_TOKEN = "AY3PCG9QsKHSPlKdz61HSGYpnQgWNj1JshHLqNuF"; // 環境変数に保存するのが望ましい
 
-  // 入力値に応じて代理店名を表示し、ラジオボタンを変更する関数
-  function handleAgentInput() {
-    const agNumberInput = document.getElementById("ag_number").value;
+// 代理店データを取得
+async function fetchAgentData() {
+    const url = `https://${KINTONE_SUBDOMAIN}.cybozu.com/k/v1/records.json?app=${KINTONE_APP_ID}`;
+    const headers = {
+        "X-Cybozu-API-Token": API_TOKEN,
+        "Content-Type": "application/json"
+    };
+
+    try {
+        const response = await fetch(url, { method: "GET", headers });
+        const data = await response.json();
+        
+        if (data.records) {
+            return data.records.reduce((acc, record) => {
+                acc[record["代理店番号"].value] = record["代理店名"].value;
+                return acc;
+            }, {});
+        }
+    } catch (error) {
+        console.error("kintone APIエラー:", error);
+    }
+    return {};
+}
+
+// 代理店データの取得＆イベント設定
+document.addEventListener("DOMContentLoaded", async () => {
+    const agentData = await fetchAgentData(); // 代理店データ取得
+    const agNumberInput = document.getElementById("ag_number");
     const agentNameElement = document.getElementById("agent_name");
     const agentRadio = document.getElementById("caution04");
 
-    // 代理店番号が一致する場合
-    if (agentData[agNumberInput]) {
-      agentNameElement.textContent = `代理店名: ${agentData[agNumberInput]}`;
-      // 代理店経由のお申し込みをチェック
-      agentRadio.checked = true;
-    } else {
-      agentNameElement.textContent = "該当する代理店がありません";
-      // 「代理店経由のお申し込み」のチェックを外す
-      agentRadio.checked = false;
-    }
-  }
+    // 入力時に代理店名を表示
+    agNumberInput.addEventListener("input", () => {
+        const agNumber = agNumberInput.value;
+        if (agentData[agNumber]) {
+            agentNameElement.textContent = `代理店名: ${agentData[agNumber]}`;
+            agentRadio.checked = true;
+        } else {
+            agentNameElement.textContent = "該当する代理店がありません";
+            agentRadio.checked = false;
+        }
+    });
+});
+
 </script>
   
 </body>
