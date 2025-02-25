@@ -89,14 +89,12 @@ document.querySelectorAll('.js-modal-open').forEach(openButton => {
 </script> 
 
 <script>
-// kintone API のエンドポイントとAPIトークン
-const KINTONE_SUBDOMAIN = "asiro-ssi"; // 例: example
-const KINTONE_APP_ID = 91; // 取引先一覧アプリのアプリID
-const API_TOKEN = "AY3PCG9QsKHSPlKdz61HSGYpnQgWNj1JshHLqNuF"; // 環境変数に保存するのが望ましい
-
-// 代理店データを取得
 async function fetchAgentData() {
+    const KINTONE_SUBDOMAIN = "asiro-ssi";
+    const KINTONE_APP_ID = 91; // 取引先一覧アプリのアプリID
+    const API_TOKEN = "AY3PCG9QsKHSPlKdz61HSGYpnQgWNj1JshHLqNuF";
     const url = `https://${KINTONE_SUBDOMAIN}.cybozu.com/k/v1/records.json?app=${KINTONE_APP_ID}`;
+
     const headers = {
         "X-Cybozu-API-Token": API_TOKEN,
         "Content-Type": "application/json"
@@ -108,7 +106,7 @@ async function fetchAgentData() {
         
         if (data.records) {
             return data.records.reduce((acc, record) => {
-                acc[record["代理店番号"].value] = record["代理店名"].value;
+                acc[record["AgentNumber"].value] = record["AgentName"].value;
                 return acc;
             }, {});
         }
@@ -117,6 +115,7 @@ async function fetchAgentData() {
     }
     return {};
 }
+
 
 // 代理店データの取得＆イベント設定
 document.addEventListener("DOMContentLoaded", async () => {
