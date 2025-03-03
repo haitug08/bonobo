@@ -29,16 +29,8 @@
 <p>プログレス社にてページ作成および問い合わせのレコード保存用の箱作成</p>
 <table class="ta1">
 <tr>
-<th>会社名（または屋号）<span style="color:red;">※</span></th>
-<td style="text-align: left;"><input type="text" name="会社名（または屋号）" size="30" class="ws" required="required" autocomplete="off"></td>
-</tr>
-<tr>
-<th>所在地<span style="color:red;">※</span></th>
-<td style="text-align: left;"><input type="text" name="本社所在地" size="30" class="ws" required="required" autocomplete="off"></td>
-</tr>
-<tr>
-<th>URL</th>
-<td style="text-align: left;"><input type="text" name="URL" size="30" class="ws" autocomplete="off"></td>
+<th>代理店名<span style="color:red;">※</span></th>
+<td style="text-align: left;"><input type="text" name="代理店名" size="30" class="ws" required="required" autocomplete="off"></td>
 </tr>
 <tr>
 <th>担当者名<span style="color:red;">※</span></th>
@@ -57,6 +49,13 @@
 <td style="text-align: left;">
 <textarea name="お問い合わせ詳細" cols="30" rows="10" class="wl" required="required" autocomplete="off" style="height: 80px;"></textarea></td>
 </tr>
+<tr>
+<th>折返希望日時</th>
+<td style="text-align: left;">
+  <input type="date" name="折返希望日" size="30" class="ws" required="required" autocomplete="off" style="max-width: 200px;">
+  <input type="time" name="折返希望時間" size="30" class="ws" required="required" autocomplete="off" style="max-width: 200px;">
+</td>
+</tr>    
 <tr>
 <th>個人情報の取扱い<span style="color:red;">※</span></th>
 <td style="text-align: left;">
