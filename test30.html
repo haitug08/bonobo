@@ -111,6 +111,11 @@
    
 </section>
 
+<details>
+  <summary>項目のタイトル</summary>
+　非表示部分です。
+</details>
+  
     <footer>
     <p style="color:#fff;">まずは、お気軽にご相談ください。</p>
     <ul class="inquiry">
@@ -131,15 +136,6 @@
 <script>
   $(document).ready(function() {
     $('.drawer').drawer();
-
-    // 「Googleでログインする方法」などの見出しクリックで開閉
-    $('.co-info-h2').on('click', function() {
-      $(this).next('.profile-list').slideToggle();
-    });
-
-    // 初期状態で非表示にする（必要なら追加）
-    $('.profile-list').hide();
-  });
 </script>
 
   </body>
