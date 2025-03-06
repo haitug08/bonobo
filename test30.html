@@ -133,13 +133,13 @@
   $(document).ready(function() {
     $('.drawer').drawer();
 
-    // 初期状態で非表示にする
-    $('.profile-list').hide();
-
-    // 見出しをクリックで開閉
+    // 「Googleでログインする方法」などの見出しクリックで開閉
     $('.co-info-h2').on('click', function() {
-      $(this).next().slideToggle();
+      $(this).next('.profile-list').slideToggle();
     });
+
+    // 初期状態で非表示にする（必要なら追加）
+    $('.profile-list').hide();
   });
 </script>
 
