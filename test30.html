@@ -127,24 +127,27 @@
   </ul>
 </footer>
 
-<script src="https://bonobo.aws.nnfdev.uk//assets/common-b9d5bea1.js" data-turbo-track="reload" type="module"></script>
+<script src="https://bonobo.aws.nnfdev.uk//assets/common-b9d5bea1.js" data-turbo-track="reload" type="module"></script>  
 <script>
     $(document).ready(function() {
       $('.drawer').drawer();
     });
 </script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+  
 <script>
   $(document).ready(function() {
     $('.drawer').drawer();
 
-    // 「Googleでログインする方法」などの見出しクリックで開閉
-    $('.co-info-h2').on('click', function() {
-      $(this).next('.profile-list').slideToggle();
-    });
-
-    // 初期状態で非表示にする（必要なら追加）
+    // 初期状態で非表示にする
     $('.profile-list').hide();
+
+    // 見出しをクリックで開閉
+    $('.co-info-h2').on('click', function() {
+      $(this).next().slideToggle();
+    });
   });
-</script>  
+</script>
+
   </body>
 </html>
