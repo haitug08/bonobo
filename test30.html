@@ -127,12 +127,24 @@
   </ul>
 </footer>
 
-    <script src="https://bonobo.aws.nnfdev.uk//assets/common-b9d5bea1.js" data-turbo-track="reload" type="module"></script>
-
-    <script>
+<script src="https://bonobo.aws.nnfdev.uk//assets/common-b9d5bea1.js" data-turbo-track="reload" type="module"></script>
+<script>
     $(document).ready(function() {
       $('.drawer').drawer();
     });
-    </script>
+</script>
+<script>
+  $(document).ready(function() {
+    $('.drawer').drawer();
+
+    // 「Googleでログインする方法」などの見出しクリックで開閉
+    $('.co-info-h2').on('click', function() {
+      $(this).next('.profile-list').slideToggle();
+    });
+
+    // 初期状態で非表示にする（必要なら追加）
+    $('.profile-list').hide();
+  });
+</script>  
   </body>
 </html>
