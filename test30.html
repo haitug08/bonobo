@@ -25,23 +25,23 @@
   <div>
     <fieldset class="info-radio">      
       <label onclick="location.href=''">
-        <input type="radio" value="はじめに" name="info-menu" checked="checked">はじめに
+        <input type="radio" value="intro1" name="info-menu" checked="checked">はじめに
       </label>            
       <label onclick="location.href=''">
-        <input type="radio" value="Googleでログインする方法" name="info-menu">Googleでログイン
+        <input type="radio" value="intro2" name="info-menu">Googleでログイン
       </label>
       <label onclick="location.href=''">
-        <input type="radio" value="Microsoftアカウントでサインインする方法" name="info-menu">Microsoftアカウントでサインイン
+        <input type="radio" value="intro3" name="info-menu">Microsoftアカウントでサインイン
       </label>
       <label onclick="location.href=''">
-        <input type="radio" value="メールアドレスでログインする方法" name="info-menu">メールアドレスでログイン
+        <input type="radio" value="intro4" name="info-menu">メールアドレスでログイン
       </label>
     </fieldset>
   </div>
 
    <hr class="blue-border">
 
-  <div class="co-info-inner" style="margin-bottom: 100px;">
+  <div id="intro1" class="co-info-inner" style="margin-bottom: 100px;">
       <div class="co-info-h2" style="margin-bottom: 30px;">はじめに</div>
       <ul class="profile-list">
       <li class="profile-list-item">
@@ -60,7 +60,7 @@
   </div>
 
 
-   <div class="co-info-inner" style="margin-bottom: 100px;">    
+   <div id="intro2" class="co-info-inner" style="margin-bottom: 100px;">    
     <div class="co-info-h2" style="margin-bottom: 30px;">Googleでログインする方法</div>
      <ul class="profile-list">
       <li class="profile-list-item" style="align-items: normal;">
@@ -82,7 +82,7 @@
     </ul>
    </div>
 
-   <div class="co-info-inner" style="margin-bottom: 100px;">    
+   <div id="intro3" class="co-info-inner" style="margin-bottom: 100px;">    
     <div class="co-info-h2" style="margin-bottom: 30px;">Microsoftアカウントでサインインする方法</div>
      <ul class="profile-list">
       <li class="profile-list-item" style="align-items: normal;">
@@ -104,7 +104,7 @@
     </ul>
    </div>
 
-   <div class="co-info-inner" style="margin-bottom: 100px;">    
+   <div id="intro4" class="co-info-inner" style="margin-bottom: 100px;">    
     <div class="co-info-h2" style="margin-bottom: 30px;">メールアドレスでログインする方法</div>
      <ul class="profile-list">
       <li class="profile-list-item" style="align-items: normal;">
@@ -161,12 +161,10 @@
     $('.co-info-inner').first().show();
 
     // ラジオボタンがクリックされたら対応する内容を表示
-    $('input[name="info-menu"]').change(function() {
-      var selectedValue = $(this).val(); // クリックされたラジオボタンの値を取得
-      $('.co-info-inner').hide(); // すべて非表示
-      $('.co-info-inner').each(function() {
-        if ($(this).find('.co-info-h2').text().trim() === selectedValue) {
-          $(this).show(); // 一致する要素を表示
+$('input[name="info-menu"]').change(function() {
+  var targetId = $(this).val();
+  $('.co-info-inner').hide();
+  $('#' + targetId).show();
         }
       });
     });
