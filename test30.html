@@ -22,25 +22,21 @@
 <body class="drawer drawer--top bg-f9">
  <section id="content">
   <div class="co-info-h1">ログイン時のご注意</div>
-  <div>
-    <fieldset class="info-radio">      
-      <label onclick="location.href=''">
-        <input type="radio" value="intro1" name="info-menu" checked="checked">はじめに
-      </label>            
-      <label onclick="location.href=''">
-        <input type="radio" value="intro2" name="info-menu">Googleでログイン
-      </label>
-      <label onclick="location.href=''">
-        <input type="radio" value="intro3" name="info-menu">Microsoftアカウントでサインイン
-      </label>
-      <label onclick="location.href=''">
-        <input type="radio" value="intro4" name="info-menu">メールアドレスでログイン
-      </label>
-    </fieldset>
-  </div>
 
+       <div class="info-radio">
+        <input type="radio" id="change01" name="course" onchange="customCalculate()" value="change01">
+        <label for="change01">はじめに</label>
+        <input type="radio" id="change02" name="course" onchange="customCalculate()" value="change02">
+        <label for="change02">Googleでログイン</label>
+        <input type="radio" id="change03" name="course" onchange="customCalculate()" value="change03">
+        <label for="change03">Microsoftでサインイン</label>
+        <input type="radio" id="change04" name="course" onchange="customCalculate()" value="change04">
+        <label for="change04">メールアドレスでログイン</label>
+       </div>
+   
    <hr class="blue-border">
 
+ <div class="open01">  
   <div id="intro1" class="co-info-inner" style="margin-bottom: 100px;">
       <div class="co-info-h2" style="margin-bottom: 30px;">はじめに</div>
       <ul class="profile-list">
@@ -58,8 +54,9 @@
           Toyokumo kintoneApp認証を通過した情報は、認証を行った端末のブラウザのCookieに2週間保存されます。<br>
           保存されている間は、ログイン画面をスキップしてアクセスできます。<br></span></p>
   </div>
+ </div>
 
-
+<div class="open02" style="display:none;">
    <div id="intro2" class="co-info-inner" style="margin-bottom: 100px;">    
     <div class="co-info-h2" style="margin-bottom: 30px;">Googleでログインする方法</div>
      <ul class="profile-list">
@@ -80,8 +77,9 @@
         <img src="images/20250306002.jpg" style="max-width: 400px;"><br>
       </li>
     </ul>
-   </div>
+   </div></div>
 
+ <div class="open03" style="display:none;">  
    <div id="intro3" class="co-info-inner" style="margin-bottom: 100px;">    
     <div class="co-info-h2" style="margin-bottom: 30px;">Microsoftアカウントでサインインする方法</div>
      <ul class="profile-list">
@@ -102,8 +100,9 @@
         <img src="images/20250306002.jpg" style="max-width: 400px;"><br>
       </li>
     </ul>
-   </div>
+   </div></div>
 
+  <div class="open04" style="display:none;"> 
    <div id="intro4" class="co-info-inner" style="margin-bottom: 100px;">    
     <div class="co-info-h2" style="margin-bottom: 30px;">メールアドレスでログインする方法</div>
      <ul class="profile-list">
@@ -125,6 +124,7 @@
       </li>
     </ul>
    </div>
+  </div>
 
    
 </section>
@@ -153,23 +153,20 @@
     $('.drawer').drawer();
 </script>
 <script>
-  $(document).ready(function() {
-    $('.drawer').drawer();
+function customCalculate() {
+    const selectedOption = document.querySelector('input[name="course"]:checked').value;
+    const openElements = document.querySelectorAll(".open01, .open02, .open03, .open04");
 
-    // 初期表示設定（最初のラジオボタンの内容を表示）
-    $('.co-info-inner').hide();
-    $('.co-info-inner').first().show();
+    // すべての要素を非表示にする
+    openElements.forEach(element => element.style.display = "none");
 
-    // ラジオボタンがクリックされたら対応する内容を表示
-$('input[name="info-menu"]').change(function() {
-  var targetId = $(this).val();
-  $('.co-info-inner').hide();
-  $('#' + targetId).show();
-        }
-      });
-    });
-  });
-</script>
+    // 該当する要素を表示
+    const targetElement = document.querySelector(`.open${selectedOption.slice(-2)}`);
+    if (targetElement) {
+        targetElement.style.display = "block";
+    }
+}
+</script>  
 
 
   
