@@ -167,8 +167,37 @@ function customCalculate() {
     }
 }
 </script>  
+<style>
+.info-radio input {
+  clip-path: inset(50%);
+  position: absolute;
+}
 
+.info-radio label {
+  width: 406px;
+  font-size: 18px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  border: 1px solid #707070;
+  border-radius: 23px;
+  background-color: #fff;
+  cursor: pointer;
+  margin-right: 17px;
+  margin-bottom: 20px;
+}
 
+.info-radio label:nth-child(2n) {
+  margin-right: 0;
+}
+
+.info-radio label:has(:checked) {
+  background-color: #15A6C2;
+  color: #fff;
+}  
+</style>
   
   </body>
 </html>
