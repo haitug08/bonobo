@@ -152,6 +152,28 @@
   $(document).ready(function() {
     $('.drawer').drawer();
 </script>
+<script>
+  $(document).ready(function() {
+    $('.drawer').drawer();
 
+    // 初期表示設定（最初のラジオボタンの内容を表示）
+    $('.co-info-inner').hide();
+    $('.co-info-inner').first().show();
+
+    // ラジオボタンがクリックされたら対応する内容を表示
+    $('input[name="info-menu"]').change(function() {
+      var selectedValue = $(this).val(); // クリックされたラジオボタンの値を取得
+      $('.co-info-inner').hide(); // すべて非表示
+      $('.co-info-inner').each(function() {
+        if ($(this).find('.co-info-h2').text().trim() === selectedValue) {
+          $(this).show(); // 一致する要素を表示
+        }
+      });
+    });
+  });
+</script>
+
+
+  
   </body>
 </html>
