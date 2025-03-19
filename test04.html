@@ -98,32 +98,31 @@ async function handleAgentInput() {
         return;
     }
 
-    const kintoneAppId = 46;
-    const kintoneApiToken = "1uLW5eIoqqu7v55vBs7tTWInacyT2nobjH8ShmE7";
-    const kintoneDomain = "asiro-ssi"; // ここにkintoneのドメインを入力
+    // kViewerのAPIエンドポイント
+    const kViewerApiUrl = `https://asiro-ssi.viewer.kintoneapp.com/public/api/records/agent-number/${agentNumber}`;
 
     try {
-        const response = await fetch(`https://${kintoneDomain}/k/v1/records.json?app=${kintoneAppId}&query=Agency_No="${agentNumber}"`, {
-            method: "GET",
-            headers: {
-                "X-Cybozu-API-Token": kintoneApiToken,
-                "Content-Type": "application/json"
-            }
-        });
+        const response = await fetch(kViewerApiUrl);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
 
         const data = await response.json();
 
-        if (data.records.length > 0) {
-            agentNameElement.textContent = data.records[0].Agency_Name1.value;
+        // kViewerのデータ構造に応じて代理店名を取得
+        if (data.records && data.records.length > 0) {
+            agentNameElement.textContent = data.records[0]["代理店名（漢字）"]; // 実際のカラム名に置き換え
         } else {
             agentNameElement.textContent = "代理店が見つかりません";
         }
     } catch (error) {
-        console.error("Error fetching data from kintone:", error);
+        console.error("Error fetching data from kViewer:", error);
         agentNameElement.textContent = "エラーが発生しました";
     }
 }
 </script>
+
 
   
 </body>
