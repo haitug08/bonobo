@@ -88,7 +88,6 @@ document.querySelectorAll('.js-modal-open').forEach(openButton => {
 });
 </script> 
 
-<script>
 async function handleAgentInput() {
     const agentNumber = document.getElementById("ag_number").value;
     const agentNameElement = document.getElementById("agent_name");
@@ -109,11 +108,12 @@ async function handleAgentInput() {
         }
 
         const data = await response.json();
-        console.log("API Response:", data); // レスポンスの確認用
 
-        // kViewerのデータ構造に応じて代理店名を取得
-        if (data.records && data.records.length > 0) {
-            agentNameElement.textContent = data.records[0]["Agency_Name1"]; // フィールドコードを使用
+        // 代理店番号で一致するレコードを探す
+        const matchingRecord = data.records.find(record => record["Agency_No"].value === agentNumber);
+
+        if (matchingRecord) {
+            agentNameElement.textContent = matchingRecord["Agency_Name1"].value;
         } else {
             agentNameElement.textContent = "代理店が見つかりません";
         }
@@ -122,7 +122,7 @@ async function handleAgentInput() {
         agentNameElement.textContent = "エラーが発生しました";
     }
 }
-</script>
+
 
 
   
