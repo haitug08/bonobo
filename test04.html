@@ -109,10 +109,11 @@ async function handleAgentInput() {
         }
 
         const data = await response.json();
+        console.log("API Response:", data); // レスポンスの確認用
 
         // kViewerのデータ構造に応じて代理店名を取得
         if (data.records && data.records.length > 0) {
-            agentNameElement.textContent = data.records[0]["代理店名（漢字）"]; // 実際のカラム名に置き換え
+            agentNameElement.textContent = data.records[0]["Agency_Name1"]; // フィールドコードを使用
         } else {
             agentNameElement.textContent = "代理店が見つかりません";
         }
