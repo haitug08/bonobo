@@ -86,10 +86,11 @@ document.querySelectorAll('.js-modal-open').forEach(openButton => {
     }
   });
 });
-</script> 
+</script>
+  
 <script>
 async function handleAgentInput() {
-    const agentNumber = document.getElementById("ag_number").value;
+    const agentNumber = document.getElementById("ag_number").value.trim();
     const agentNameElement = document.getElementById("agent_name");
 
     if (!agentNumber) {
@@ -97,20 +98,21 @@ async function handleAgentInput() {
         return;
     }
 
-    // kViewerのAPIエンドポイント
     const kViewerApiUrl = `https://asiro-ssi.viewer.kintoneapp.com/public/api/records/agent-number/${agentNumber}`;
 
     try {
         const response = await fetch(kViewerApiUrl);
+        console.log("HTTP Status:", response.status);  // ステータスコード確認
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
         const data = await response.json();
+        console.log("API Response:", data);  // 取得したデータを確認
 
-        // 代理店番号で一致するレコードを探す
-        const matchingRecord = data.records.find(record => record["Agency_No"].value === agentNumber);
+        const matchingRecord = data.records.find(record => record["Agency_No"].value.trim() === agentNumber);
+        console.log("Matching Record:", matchingRecord);  // マッチしたレコード確認
 
         if (matchingRecord) {
             agentNameElement.textContent = matchingRecord["Agency_Name1"].value;
@@ -122,6 +124,7 @@ async function handleAgentInput() {
         agentNameElement.textContent = "エラーが発生しました";
     }
 }
+
 </script> 
 
 
