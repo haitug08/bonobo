@@ -89,54 +89,42 @@ document.querySelectorAll('.js-modal-open').forEach(openButton => {
 </script> 
 
 <script>
-async function fetchAgentData() {
-    const KINTONE_SUBDOMAIN = "asiro-ssi";
-    const KINTONE_APP_ID = 91; // 取引先一覧アプリのアプリID
-    const API_TOKEN = "AY3PCG9QsKHSPlKdz61HSGYpnQgWNj1JshHLqNuF";
-    const url = `https://${KINTONE_SUBDOMAIN}.cybozu.com/k/v1/records.json?app=${KINTONE_APP_ID}`;
+async function handleAgentInput() {
+    const agentNumber = document.getElementById("ag_number").value;
+    const agentNameElement = document.getElementById("agent_name");
 
-    const headers = {
-        "X-Cybozu-API-Token": API_TOKEN,
-        "Content-Type": "application/json"
-    };
+    if (!agentNumber) {
+        agentNameElement.textContent = "";
+        return;
+    }
+
+    const kintoneAppId = 46;
+    const kintoneApiToken = "1uLW5eIoqqu7v55vBs7tTWInacyT2nobjH8ShmE7";
+    const kintoneDomain = "asiro-ssi"; // ここにkintoneのドメインを入力
 
     try {
-        const response = await fetch(url, { method: "GET", headers });
+        const response = await fetch(`https://${kintoneDomain}/k/v1/records.json?app=${kintoneAppId}&query=Agency_No="${agentNumber}"`, {
+            method: "GET",
+            headers: {
+                "X-Cybozu-API-Token": kintoneApiToken,
+                "Content-Type": "application/json"
+            }
+        });
+
         const data = await response.json();
-        
-        if (data.records) {
-            return data.records.reduce((acc, record) => {
-                acc[record["AgentNumber"].value] = record["AgentName"].value;
-                return acc;
-            }, {});
+
+        if (data.records.length > 0) {
+            agentNameElement.textContent = data.records[0].Agency_Name1.value;
+        } else {
+            agentNameElement.textContent = "代理店が見つかりません";
         }
     } catch (error) {
-        console.error("kintone APIエラー:", error);
+        console.error("Error fetching data from kintone:", error);
+        agentNameElement.textContent = "エラーが発生しました";
     }
-    return {};
 }
-
-
-// 代理店データの取得＆イベント設定
-document.addEventListener("DOMContentLoaded", async () => {
-    const agentData = await fetchAgentData(); // 代理店データ取得
-    const agNumberInput = document.getElementById("ag_number");
-    const agentNameElement = document.getElementById("agent_name");
-    const agentRadio = document.getElementById("caution04");
-
-    // 入力時に代理店名を表示
-    agNumberInput.addEventListener("input", () => {
-        const agNumber = agNumberInput.value;
-        if (agentData[agNumber]) {
-            agentNameElement.textContent = `代理店名: ${agentData[agNumber]}`;
-            agentRadio.checked = true;
-        } else {
-            agentNameElement.textContent = "該当する代理店がありません";
-            agentRadio.checked = false;
-        }
-    });
-});
 </script>
+
   
 </body>
 </html>
