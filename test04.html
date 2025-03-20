@@ -41,41 +41,40 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="js/main.js"></script>
   
-<script>
-async function handleAgentInput() {
-  const agentNumber = document.getElementById("ag_number").value;
-  const agentNameField = document.getElementById("agent_name");
+    <script>
+        async function fetchAgents() {
+            try {
+                const response = await fetch("https://asiro-ssi.viewer.kintoneapp.com/public/api/records/agent-number/1");
+                if (!response.ok) {
+                    throw new Error("データ取得に失敗しました");
+                }
+                const data = await response.json();
+                return data.records;
+            } catch (error) {
+                console.error("エラー:", error);
+                return [];
+            }
+        }
 
-  if (!agentNumber) {
-    agentNameField.textContent = "";
-    return;
-  }
+        async function handleAgentInput() {
+            const inputNumber = document.getElementById("ag_number").value.trim();
+            const agentNameElement = document.getElementById("agent_name");
 
-  const proxyUrl = "https://script.google.com/macros/s/AKfycbxYv7Wigg_4LJhaihUktICAGcw-SbpmVUYaVlrIQMEYdQra_uO2raNoqYQEKTS8zqaT/exec"; // デプロイしたGASのURL
+            if (inputNumber === "") {
+                agentNameElement.textContent = "";
+                return;
+            }
 
-  try {
-    const response = await fetch(`${proxyUrl}?agency_no=${agentNumber}`);
-    const data = await response.json();
+            const records = await fetchAgents();
+            const matchedAgent = records.find(record => record.Agency_No.value === inputNumber);
 
-    console.log("GAS Response:", data); // ★レスポンスを確認
-
-    if (!data.records) {
-      throw new Error("recordsプロパティが存在しません");
-    }
-
-    if (data.records.length > 0) {
-      agentNameField.textContent = data.records[0].Agency_Name1.value;
-    } else {
-      agentNameField.textContent = "該当する代理店が見つかりません";
-    }
-  } catch (error) {
-    console.error("データ取得エラー:", error);
-    agentNameField.textContent = "データ取得エラー";
-  }
-}
-
-</script>
-
+            if (matchedAgent) {
+                agentNameElement.textContent = matchedAgent.Agency_Name1.value;
+            } else {
+                agentNameElement.textContent = "該当する代理店が見つかりません";
+            }
+        }
+    </script>
 
 
   
