@@ -47,37 +47,15 @@
     const agentNameField = document.getElementById("agent_name");
 
     if (!agentNumber) {
-      agentNameField.textContent = ""; // 入力が空なら代理店名をクリア
+      agentNameField.textContent = "";
       return;
     }
 
-    const apiToken = "1uLW5eIoqqu7v55vBs7tTWInacyT2nobjH8ShmE7"; // ここにAPIトークンを入力
-    const appId = 46; // アプリID
-    const kintoneDomain = "https://asiro-ssi.cybozu.com"; // ドメイン
-
-    const query = encodeURIComponent(`Agency_No="${agentNumber}"`);
-    const url = `${kintoneDomain}/k/v1/records.json?app=${appId}&query=${query}`;
+    const proxyUrl = "https://script.google.com/macros/s/AKfycbxMLUt4NMG48pgbYzSPAvZD4ba00f4WLCmu6TIpmhjjBeZRi8G21-v_MvR_k0c9aobe/exec"; // デプロイしたGASのURL
 
     try {
-      console.log("APIリクエストURL:", url); // デバッグ用ログ
-      const response = await fetch(url, {
-        method: "GET",
-        headers: {
-          "X-Cybozu-API-Token": apiToken,
-          "Content-Type": "application/json",
-        },
-      });
-
-      console.log("HTTPステータス:", response.status); // ステータス確認
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error("エラー詳細:", errorData);
-        throw new Error(`データ取得に失敗しました (${response.status})`);
-      }
-
+      const response = await fetch(`${proxyUrl}?agency_no=${agentNumber}`);
       const data = await response.json();
-      console.log("取得データ:", data); // デバッグ用ログ
 
       if (data.records.length > 0) {
         agentNameField.textContent = data.records[0].Agency_Name1.value;
@@ -85,7 +63,7 @@
         agentNameField.textContent = "該当する代理店が見つかりません";
       }
     } catch (error) {
-      console.error("エラー:", error);
+      console.error("データ取得エラー:", error);
       agentNameField.textContent = "データ取得エラー";
     }
   }
