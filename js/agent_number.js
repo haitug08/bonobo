@@ -1,4 +1,9 @@
 
+function getQueryParam(param) {	
+        const urlParams = new URLSearchParams(window.location.search);	
+        return urlParams.get(param);	
+}
+
         async function fetchAgents() {
             try {
                 const response = await fetch("https://asiro-ssi.viewer.kintoneapp.com/public/api/records/agent-number/1");
@@ -35,3 +40,10 @@
                 agentAddressElement.textContent = "";
             }
         }
+
+window.onload = function () {	
+        const agencyNumber = getQueryParam("agency_no");	
+        if (agencyNumber) {	
+                document.getElementById("ag_number").value = agencyNumber;	
+                handleAgentInput(); // 自動で代理店名を取得	
+}
