@@ -1,18 +1,45 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>代理店検索</title>
+<meta charset="UTF-8">
+<title>bonobo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet"> 
 </head>
 <body>
 
-    <h2>代理店検索</h2>
+<div class="wrapper">
+<div id="header"></div>
+<div id="menubar">
+<div id="navigation"></div>
+</div>
+<main>
+<div class="zen-kaku-gothic-new-regular">
+
+<section>
+<form action="" method="post" id="contact_form">
+
+<h2>代理店番号</h2>
+
+    <h2>代理店番号検索</h2>
     <label for="ag_number">代理店番号：</label>
     <input type="text" id="ag_number" name="ag_number" oninput="handleAgentInput()">
     <p id="agent_name" style="margin-top: 10px;"></p>
-    <p id="agent_address" style="margin-top: 5px;"></p> <!-- 住所用の要素を追加 -->
+    <p id="agent_address" style="margin-top: 5px;"></p>
 
+</form>
+</section>
+
+</div>
+</main>
+
+<div id="footer"></div>
+</div>
+    
     <script>
         async function fetchAgents() {
             try {
@@ -44,7 +71,7 @@
 
             if (matchedAgent) {
                 agentNameElement.textContent = matchedAgent.Agency_Name1.value;
-                agentAddressElement.textContent = matchedAgent.Address1_FULL.value; // 住所を表示
+                agentAddressElement.textContent = matchedAgent.Address1_FULL.value;
             } else {
                 agentNameElement.textContent = "該当する代理店が見つかりません";
                 agentAddressElement.textContent = "";
@@ -52,5 +79,9 @@
         }
     </script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/main.js"></script>
+<div class="pagetop"><a href="#"><i class="fas fa-angle-double-up"></i></a></div>
+ 
 </body>
 </html>
