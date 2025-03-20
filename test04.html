@@ -1,46 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>bonobo</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
-<link rel="stylesheet" href="css/style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代理店検索</title>
 </head>
 <body>
-<div class="wrapper">
-<div id="header"></div>
-<div id="menubar">
-<div id="navigation"></div>
-</div>
-<main>
-<div class="zen-kaku-gothic-new-regular">
 
-<h2>申込フォーム内での申し込み経緯について</h2>
-  <p>募集代理店名を表示させたい。<br>
-  例：代理店番号に「AG1001」を入力で「株式会社AAA」を表示（変更後のテキストボックスにAG1001を入力）</p>
-  
-<section>
-  <h4>変更後</h4>
-  <p>代理店経由のお申し込み</p>
-  <br>
-  <label for="ag_number">代理店番号：</label>
-  <input type="text" id="ag_number" name="ag_number" oninput="handleAgentInput()">
-  <p id="agent_name" style="margin-top: 10px;"></p>
-</section>
-  
-</div>
-</main>
+    <h2>代理店検索</h2>
+    <label for="ag_number">代理店番号：</label>
+    <input type="text" id="ag_number" name="ag_number" oninput="handleAgentInput()">
+    <p id="agent_name" style="margin-top: 10px;"></p>
+    <p id="agent_address" style="margin-top: 5px;"></p> <!-- 住所用の要素を追加 -->
 
-<div id="footer"></div>
-</div>
-  
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="js/main.js"></script>
-  
     <script>
         async function fetchAgents() {
             try {
@@ -59,9 +31,11 @@
         async function handleAgentInput() {
             const inputNumber = document.getElementById("ag_number").value.trim();
             const agentNameElement = document.getElementById("agent_name");
+            const agentAddressElement = document.getElementById("agent_address");
 
             if (inputNumber === "") {
                 agentNameElement.textContent = "";
+                agentAddressElement.textContent = "";
                 return;
             }
 
@@ -70,14 +44,13 @@
 
             if (matchedAgent) {
                 agentNameElement.textContent = matchedAgent.Agency_Name1.value;
+                agentAddressElement.textContent = matchedAgent.Address1_FULL.value; // 住所を表示
             } else {
                 agentNameElement.textContent = "該当する代理店が見つかりません";
+                agentAddressElement.textContent = "";
             }
         }
     </script>
 
-
-  
 </body>
 </html>
-
