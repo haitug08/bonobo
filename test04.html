@@ -31,12 +31,23 @@
     →　KView「<a href="https://asiro-ssi.viewer.kintoneapp.com/public/api/records/agent-number/1" target="_blank">外部公開API（代理店番号）</a>」を作成<br>
     ・「<a href="js/agent_number.js" target="_blank">agent_number.js</a>」を作成<br>
     ・代理店番号（AG＋数字4桁。例：AG1001、AG1006、AG1052・・・）を入力すると、代理店名と住所を表示。
+</p>
+    <br>
+    <table class="ta2">
+        <tr>
+            <th><label for="ag_number">代理店番号</label></th>
+            <td><input type="text" id="ag_number" name="ag_number" oninput="handleAgentInput()"></td>
+        </tr>
+        <tr>
+            <th>代理店名</th>
+            <td><p id="agent_name" style="margin-top: 10px;"></p></td>
+        </tr>
+        <tr>
+            <th>代理店住所</th>
+            <td><p id="agent_address" style="margin-top: 5px;"></p></td>
+        </tr>
+    </table>
 </p><br>
-    
-    <label for="ag_number">代理店番号：</label>
-    <input type="text" id="ag_number" name="ag_number" oninput="handleAgentInput()">
-    <p id="agent_name" style="margin-top: 10px;"></p>
-    <p id="agent_address" style="margin-top: 5px;"></p><br>
 
     
 </form>
