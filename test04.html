@@ -24,12 +24,23 @@
 <form action="" method="post" id="contact_form">
 
 <h2>代理店番号</h2>
-
+<br>
+    
     <label for="ag_number">代理店番号：</label>
     <input type="text" id="ag_number" name="ag_number" oninput="handleAgentInput()">
     <p id="agent_name" style="margin-top: 10px;"></p>
     <p id="agent_address" style="margin-top: 5px;"></p>
 
+<br>
+<p><span style="font-weight:bold;">■ 外部公開API</span><br>
+    ・kintoneアプリ「代理店」<br>
+    →　KView「<a href="https://asiro-ssi.viewer.kintoneapp.com/public/api/records/agent-number/1" target="_blank">外部公開API（代理店番号）</a>」を作成<br>
+    ・「<a href="js/agent_number.js" target="_blank">agent_number.js</a>」を作成<br>
+</p>
+    
+<br>
+
+    
 </form>
 </section>
 
@@ -39,48 +50,12 @@
 <div id="footer"></div>
 </div>
     
-    <script>
-        async function fetchAgents() {
-            try {
-                const response = await fetch("https://asiro-ssi.viewer.kintoneapp.com/public/api/records/agent-number/1");
-                if (!response.ok) {
-                    throw new Error("データ取得に失敗しました");
-                }
-                const data = await response.json();
-                return data.records;
-            } catch (error) {
-                console.error("エラー:", error);
-                return [];
-            }
-        }
 
-        async function handleAgentInput() {
-            const inputNumber = document.getElementById("ag_number").value.trim();
-            const agentNameElement = document.getElementById("agent_name");
-            const agentAddressElement = document.getElementById("agent_address");
-
-            if (inputNumber === "") {
-                agentNameElement.textContent = "";
-                agentAddressElement.textContent = "";
-                return;
-            }
-
-            const records = await fetchAgents();
-            const matchedAgent = records.find(record => record.Agency_No.value === inputNumber);
-
-            if (matchedAgent) {
-                agentNameElement.textContent = matchedAgent.Agency_Name1.value;
-                agentAddressElement.textContent = matchedAgent.Address1_FULL.value;
-            } else {
-                agentNameElement.textContent = "該当する代理店が見つかりません";
-                agentAddressElement.textContent = "";
-            }
-        }
-    </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/agent_number.js"></script>
 <div class="pagetop"><a href="#"><i class="fas fa-angle-double-up"></i></a></div>
  
 </body>
-</html>
+</html作成
