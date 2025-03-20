@@ -59,6 +59,7 @@
     const url = `${kintoneDomain}/k/v1/records.json?app=${appId}&query=${query}`;
 
     try {
+      console.log("APIリクエストURL:", url); // デバッグ用ログ
       const response = await fetch(url, {
         method: "GET",
         headers: {
@@ -67,9 +68,17 @@
         },
       });
 
-      if (!response.ok) throw new Error("データ取得に失敗しました");
+      console.log("HTTPステータス:", response.status); // ステータス確認
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error("エラー詳細:", errorData);
+        throw new Error(`データ取得に失敗しました (${response.status})`);
+      }
 
       const data = await response.json();
+      console.log("取得データ:", data); // デバッグ用ログ
+
       if (data.records.length > 0) {
         agentNameField.textContent = data.records[0].Agency_Name1.value;
       } else {
