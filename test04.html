@@ -42,31 +42,38 @@
 <script src="js/main.js"></script>
   
 <script>
-  async function handleAgentInput() {
-    const agentNumber = document.getElementById("ag_number").value;
-    const agentNameField = document.getElementById("agent_name");
+async function handleAgentInput() {
+  const agentNumber = document.getElementById("ag_number").value;
+  const agentNameField = document.getElementById("agent_name");
 
-    if (!agentNumber) {
-      agentNameField.textContent = "";
-      return;
-    }
-
-    const proxyUrl = "https://script.google.com/macros/s/AKfycbxMLUt4NMG48pgbYzSPAvZD4ba00f4WLCmu6TIpmhjjBeZRi8G21-v_MvR_k0c9aobe/exec"; // デプロイしたGASのURL
-
-    try {
-      const response = await fetch(`${proxyUrl}?agency_no=${agentNumber}`);
-      const data = await response.json();
-
-      if (data.records.length > 0) {
-        agentNameField.textContent = data.records[0].Agency_Name1.value;
-      } else {
-        agentNameField.textContent = "該当する代理店が見つかりません";
-      }
-    } catch (error) {
-      console.error("データ取得エラー:", error);
-      agentNameField.textContent = "データ取得エラー";
-    }
+  if (!agentNumber) {
+    agentNameField.textContent = "";
+    return;
   }
+
+  const proxyUrl = "https://script.google.com/macros/s/AKfycbzIekmyYh4v7rGcwZAgS4ieqr1uEhvaAFwNUhwxxrC856th0sqmlz2T2RilFlJDAYS9/exec"; // デプロイしたGASのURL
+
+  try {
+    const response = await fetch(`${proxyUrl}?agency_no=${agentNumber}`);
+    const data = await response.json();
+
+    console.log("GAS Response:", data); // ★レスポンスを確認
+
+    if (!data.records) {
+      throw new Error("recordsプロパティが存在しません");
+    }
+
+    if (data.records.length > 0) {
+      agentNameField.textContent = data.records[0].Agency_Name1.value;
+    } else {
+      agentNameField.textContent = "該当する代理店が見つかりません";
+    }
+  } catch (error) {
+    console.error("データ取得エラー:", error);
+    agentNameField.textContent = "データ取得エラー";
+  }
+}
+
 </script>
 
 
