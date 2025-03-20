@@ -1,8 +1,7 @@
-
-function getQueryParam(param) {	
-        const urlParams = new URLSearchParams(window.location.search);	
-        return urlParams.get(param);	
-}
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
 
         async function fetchAgents() {
             try {
@@ -41,9 +40,11 @@ function getQueryParam(param) {
             }
         }
 
-window.onload = function () {	
-        const agencyNumber = getQueryParam("agency_no");	
-        if (agencyNumber) {	
-                document.getElementById("ag_number").value = agencyNumber;	
-                handleAgentInput(); // 自動で代理店名を取得	
-}
+        // ページ読み込み時にURLパラメータをチェックし、自動入力
+        window.onload = function () {
+            const agencyNumber = getQueryParam("agency_no");
+            if (agencyNumber) {
+                document.getElementById("ag_number").value = agencyNumber;
+                handleAgentInput(); // 自動で代理店名を取得
+            }
+        };
