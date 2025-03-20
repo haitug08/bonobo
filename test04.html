@@ -40,78 +40,48 @@
   
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="js/main.js"></script>
-<script>
-document.querySelectorAll('.js-modal-open').forEach(openButton => {
-  const modalId = openButton.getAttribute('data-modal'); // 対応するモーダルID
-  const modal = document.getElementById(modalId);
-  const closeButton = modal.querySelector('.js-modal-close');
-  const agreeButton = modal.querySelector('.agree-btn');
-
-  // モーダルを開く
-  openButton.addEventListener('click', () => {
-    modal.classList.add('is-active');
-  });
-
-  // モーダルを閉じる
-  closeButton.addEventListener('click', () => {
-    modal.classList.remove('is-active');
-  });
-
-  // 同意ボタンクリック時の処理
-  agreeButton.addEventListener('click', () => {
-    modal.classList.remove('is-active');
-    openButton.textContent = '確認済み';
-    openButton.style.backgroundColor = 'gray';
-    openButton.style.cursor = 'pointer'; // 再クリック可能にする
-  });
-
-  // モーダル外クリックで閉じる
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.remove('is-active');
-    }
-  });
-});
-</script>
   
 <script>
-async function handleAgentInput() {
-    const agentNumber = document.getElementById("ag_number").value.trim();
-    const agentNameElement = document.getElementById("agent_name");
+  async function handleAgentInput() {
+    const agentNumber = document.getElementById("ag_number").value;
+    const agentNameField = document.getElementById("agent_name");
 
     if (!agentNumber) {
-        agentNameElement.textContent = "";
-        return;
+      agentNameField.textContent = ""; // 入力が空なら代理店名をクリア
+      return;
     }
 
-    const kViewerApiUrl = `https://asiro-ssi.viewer.kintoneapp.com/public/api/records/agent-number/${agentNumber}`;
+    const apiToken = "YOUR_API_TOKEN"; // ここにAPIトークンを入力
+    const appId = 46; // アプリID
+    const kintoneDomain = "https://asiro-ssi.cybozu.com"; // ドメイン
+
+    const query = encodeURIComponent(`Agency_No="${agentNumber}"`);
+    const url = `${kintoneDomain}/k/v1/records.json?app=${appId}&query=${query}`;
 
     try {
-        const response = await fetch(kViewerApiUrl);
-        console.log("HTTP Status:", response.status);  // ステータスコード確認
+      const response = await fetch(url, {
+        method: "GET",
+        headers: {
+          "X-Cybozu-API-Token": apiToken,
+          "Content-Type": "application/json",
+        },
+      });
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
+      if (!response.ok) throw new Error("データ取得に失敗しました");
 
-        const data = await response.json();
-        console.log("API Response:", data);  // 取得したデータを確認
-
-        const matchingRecord = data.records.find(record => record["Agency_No"].value.trim() === agentNumber);
-        console.log("Matching Record:", matchingRecord);  // マッチしたレコード確認
-
-        if (matchingRecord) {
-            agentNameElement.textContent = matchingRecord["Agency_Name1"].value;
-        } else {
-            agentNameElement.textContent = "代理店が見つかりません";
-        }
+      const data = await response.json();
+      if (data.records.length > 0) {
+        agentNameField.textContent = data.records[0].Agency_Name1.value;
+      } else {
+        agentNameField.textContent = "該当する代理店が見つかりません";
+      }
     } catch (error) {
-        console.error("Error fetching data from kViewer:", error);
-        agentNameElement.textContent = "エラーが発生しました";
+      console.error("エラー:", error);
+      agentNameField.textContent = "データ取得エラー";
     }
-}
+  }
+</script>
 
-</script> 
 
 
   
