@@ -1,5 +1,7 @@
 $(document).ready(function () {
-    function handleAgentInput() {
+    $("#kijisuukensaku").on("click", function (event) {
+        event.preventDefault(); // デフォルトのリンク動作を防ぐ
+
         let keyword = $("#keyword").val();
         let suspiciousWords = ["稲川聖城", "山口春吉", "工藤玄治", "上坂仙吉"];
         let found = suspiciousWords.some(word => keyword.includes(word));
@@ -11,7 +13,5 @@ $(document).ready(function () {
             $("#002").hide(); // section#002を非表示
             $("#paper_count, #web_count, #blog_count, #overseas_count, #database_count").text(0); // カウントを0にリセット
         }
-    }
-
-    $("#keyword").on("input", handleAgentInput);
+    });
 });
