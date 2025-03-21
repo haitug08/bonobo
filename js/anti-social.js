@@ -8,10 +8,14 @@ $(document).ready(function () {
 
         if (found) {
             $("#002").show(); // section#002を表示
-            $("#paper_count, #web_count, #blog_count, #overseas_count, #database_count").text(100); // カウントを100に変更
+            $("#paper_count, #web_count, #blog_count, #overseas_count, #database_count")
+                .text(100)
+                .css("color", "#ff4d4d"); // 100の文字色を赤に変更
         } else {
             $("#002").hide(); // section#002を非表示
-            $("#paper_count, #web_count, #blog_count, #overseas_count, #database_count").text(0); // カウントを0にリセット
+            $("#paper_count, #web_count, #blog_count, #overseas_count, #database_count")
+                .text(0)
+                .css("color", ""); // デフォルトの色に戻す
         }
     });
 });
