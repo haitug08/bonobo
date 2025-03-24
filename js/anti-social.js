@@ -19,3 +19,9 @@ $(document).ready(function () {
         }
     });
 });
+
+$(document).ready(function() {
+    $("#check_button").click(function() {
+        $("#result_url").show(); // URLの表示
+    });
+});
