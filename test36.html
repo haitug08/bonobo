@@ -46,7 +46,24 @@
       <ul class="inquiry" style="max-width:600px; margin: 100px auto;">
       <li><a href="https://bonobo.aws.nnfdev.uk/form/contractor?init=true" class="btn btn-secondary">上記に同意して次に進む</a></li>
     </ul> 
-  </div>
+  </div><br>
+
+    <table class="ta2">
+     <tr><td style="text-align: center;">
+            <label for="ag_number">代理店番号：</label>
+            <input type="text" id="ag_number" name="ag_number" oninput="handleAgentInput()"
+                style="border: 0.5px solid #d9d9d9; height: 20px; padding: 10px;" pattern="^[A-Z0-9]+$"><br>
+            <p id="agent_name" style="margin-top: 10px;"></p>
+            <p id="agent_address" style="margin-top: 5px;"></p>
+        </td></tr>
+    </table>
+    
+<small>
+<p>※チラシをお持ちの場合、裏面の代理店番号が上記と一致しているかご確認ください。異なる場合はチラシの番号をご入力ください。</p>    
+</small><br>
+<br>
+<small>
+
    
 </section>
 
@@ -68,6 +85,7 @@
   </ul>
 </footer>
 
+<script src="js/agent_number.js"></script>  
 <script src="js/common-b9d5bea1.js" data-turbo-track="reload" type="module"></script>  
 <script>
   $(document).ready(function() {
