@@ -182,7 +182,6 @@
             };
           });
 
-
         if (summaryRecords.length === 0) {
           alert('集計対象のデータがありません');
           return;
@@ -192,7 +191,6 @@
           app: app149,
           records: summaryRecords
         });
-
 
         const agNumbers = Object.keys(summaryMap);
         const batchSize = 100;
@@ -220,7 +218,6 @@
             };
           });
 
-
           // 149のレコードIDを取得して corporate_number をセット
           const summaryRes = await kintone.api(kintone.api.url('/k/v1/records', true), 'GET', {
             app: app149,
@@ -244,7 +241,6 @@
               }
             }));
 
-
           while (updates.length) {
             await kintone.api(kintone.api.url('/k/v1/records', true), 'PUT', {
               app: app149,
@@ -258,8 +254,6 @@
                 alert('集計処理中にエラーが発生しました');
               }
             };
-
-
 
     const exportBtn = createButton('export-button', '振込用ファイル出力', '#F4A261');
     space.appendChild(exportBtn);
@@ -294,19 +288,19 @@
 
         // ヘッダー
         const header = ''
-          + '1'                                  // データ区分 (1桁)
-          + '21'                                 // 種別コード (2桁)
-          + '0'                                  // コード区分 (1桁)
-          + padLeftZero('9891049959', 10)        // 委託者コード (10桁)
-          + padRight('ｶ)ｱｼﾛｼﾖｳｶﾞｸﾀﾝｷﾎｹﾝ', 40)    // 委託者名 (40桁)
-          + (closingDate ? closingDate.substr(5,2) + closingDate.substr(8,2) : '0000') // 取組日MMDD (4桁)
-          + padLeftZero('0001', 4)               // 仕向銀行番号 (4桁)
-          + padRight('               ', 15)      // 仕向銀行名 (15桁)
-          + padLeftZero('066', 3)                // 仕向支店番号 (3桁)
-          + padRight('               ', 15)      // 仕向支店名 (15桁)
-          + '1'                                  // 預金種目 (1桁)
-          + padLeftZero('4358840', 7)            // 口座番号 (7桁)
-          + padRight('', 17);                    // ダミー (17桁)
+          + '1'
+          + '21'
+          + '0'
+          + padLeftZero('9891049959', 10)
+          + padRight('ｶ)ｱｼﾛｼﾖｳｶﾞｸﾀﾝｷﾎｹﾝ', 40)
+          + (closingDate ? closingDate.substr(5,2) + closingDate.substr(8,2) : '0000') 
+          + padLeftZero('0001', 4)
+          + padRight('               ', 15)
+          + padLeftZero('066', 3)
+          + padRight('               ', 15)
+          + '1'
+          + padLeftZero('4358840', 7)
+          + padRight('', 17);
         rows.push(header);
 
         let totalAmount = 0;
@@ -317,37 +311,37 @@
           totalAmount += amount;
 
           const dataRow = ''
-            + '2'                                    // データ区分
-            + padLeftZero(rec.Bank_Cord?.value, 4)   // 被仕向銀行番号
-            + padRight('', 15)                       // 被仕向銀行名
-            + padLeftZero(rec.Branch_Cord?.value, 3) // 被仕向支店番号
-            + padRight('', 15)                       // 被仕向支店名
-            + '0000'                                 // 手形交換所番号（全てゼロ）
+            + '2'
+            + padLeftZero(rec.Bank_Cord?.value, 4)
+            + padRight('', 15)
+            + padLeftZero(rec.Branch_Cord?.value, 3)
+            + padRight('', 15) 
+            + '0000'
             + padLeftZero(rec.Deposit_type.value === '普通' ? '1' : '2', 1)
-            + padLeftZero(rec.Account_Number?.value, 7) // 口座番号
-            + padRight(rec.Account_holder2?.value, 30) // 受取人名
-            + padLeftZero(rec.total_fee_including_tax?.value, 10)      // 振込金額
-            + '0'                                   // 新規コード（0固定）
-            + '          '                   // 顧客コード1（空欄）
-            + '          '                   // 顧客コード2（空欄）
-            + '7'                                   // 振込区分
-            + ' '                                   // 識別表示（空白）
-            + padRight('', 7);                      // ダミー
+            + padLeftZero(rec.Account_Number?.value, 7) 
+            + padRight(rec.Account_holder2?.value, 30) 
+            + padLeftZero(rec.total_fee_including_tax?.value, 10)
+            + '0'
+            + '          '
+            + '          '
+            + '7'
+            + ' '
+            + padRight('', 7);
           rows.push(dataRow);
         });
 
         // トレーラレコード
         const trailer = ''
-          + '8'                                // データ区分
-          + padLeftZero(summaryRes.records.length, 6) // 合計件数
-          + padLeftZero(totalAmount, 12)       // 合計金額
-          + padRight('', 101);                 // ダミー
+          + '8'
+          + padLeftZero(summaryRes.records.length, 6) 
+          + padLeftZero(totalAmount, 12) 
+          + padRight('', 101);
         rows.push(trailer);
 
         // エンドレコード
         const endRecord = ''
-          + '9'                               // データ区分
-          + padRight('', 119);                 // ダミー
+          + '9'
+          + padRight('', 119);
         rows.push(endRecord);
 
         // 1行ずつCRLFで区切る
@@ -368,8 +362,5 @@
         alert('ファイル出力中にエラーが発生しました');
       }
     };
-
   });
-
 })();
-
